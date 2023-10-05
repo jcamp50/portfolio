@@ -1,8 +1,7 @@
-"use client";
+'use client';
 import React from 'react';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
-
 
 const HeroSection = () => {
   return (
@@ -18,13 +17,13 @@ const HeroSection = () => {
               sequence={[
                 // Same substring at the start will only be typed out once, initially
                 'Jordan.',
-                1500, // wait 1s before replacing "Mice" with "Hamsters"
-                'Jordan. Software Engineer.',
-                1500,
-                'Jordan. Front-End Developer.',
-                1500,
-                'Jordan. UI/UX Designer.',
-                1500,
+                3000, // wait 1s before replacing "Mice" with "Hamsters"
+                'a Software Engineer.',
+                2000,
+                'a Front-End Developer.',
+                2000,
+                'a UI/UX Designer.',
+                2000,
               ]}
               wrapper='span'
               speed={30}
