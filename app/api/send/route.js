@@ -10,7 +10,13 @@ export async function POST() {
       from: 'Jordan <7jacampbell@gmail.com>',
       to: ['7jacampbell@gmail.com'],
       subject: 'Hello world',
-      react: EmailTemplate({ firstName: 'John' }),
+      react: (
+        <>
+          <p>Email Body</p>
+        </>
+
+      ),
+      
     });
 
     return NextResponse.json(data);
