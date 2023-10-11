@@ -127,7 +127,7 @@ const EmailSection = () => {
             Send Message
           </button>
           <p
-            className={`text-green-500 text-sm mt-2 ${
+            className={`text-green-500 text-semibold text-sm mt-2 ${
               emailSubmitted
                 ? 'opacity-100 transition-opacity duration-1000'
                 : 'opacity-0 transition-opacity duration-1000'
