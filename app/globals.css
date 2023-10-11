@@ -31,7 +31,7 @@ body {
     /* Add this line to remove default body padding */
     overflow-x: hidden;
     /* This prevents horizontal scrolling */
-  
+    -webkit-overflow-scrolling: touch;
     /* Add these Tailwind classes to ensure full-width content */
 
 }
