@@ -13,6 +13,7 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+
   }
 }
 
@@ -24,4 +25,13 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    margin: 0;
+    /* Add this line to remove default body margin */
+    padding: 0;
+    /* Add this line to remove default body padding */
+    overflow-x: hidden;
+    /* This prevents horizontal scrolling */
+  
+    /* Add these Tailwind classes to ensure full-width content */
+
 }
