@@ -6,23 +6,30 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [spamDelay, setSpamDelay] = useState(0);
+  const [showWarning, setShowWarning] = useState(false);
 
   useEffect(() => {
     let timeout;
-    if (emailSubmitted) {
+
+    if (spamDelay > 0) {
       timeout = setTimeout(() => {
-        setEmailSubmitted(false);
-      }, 5000); // Adjust the delay time (in milliseconds) as needed
+        setSpamDelay((prevTime) => prevTime - 1);
+      }, 1000);
+    } else {
+      setShowWarning(false);
     }
+
     return () => clearTimeout(timeout);
-  }, [emailSubmitted]);
+  }, [spamDelay]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSending(true);
     const data = {
+      name: e.target.name.value,
       email: e.target.email.value,
-      subject: e.target.subject.value,
       message: e.target.message.value,
     };
     const JSONdata = JSON.stringify(data);
@@ -45,17 +52,21 @@ const EmailSection = () => {
 
     if (response.status === 200) {
       console.log('Message sent.');
-      setEmailSubmitted(true);
+      setSpamDelay(60);
+      setSending(false);
     }
   };
 
   return (
-    <section className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative' id='contact'>
+    <section
+      className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative'
+      id='contact'
+    >
       <div className='bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2'></div>
       <div className='z-10'>
-        <h5 className='text-xl folt-bold text-white my-2'>
+        <h2 className='text-4xl font-bold text-white my-2'>
           Let&apos;s Connect
-        </h5>
+        </h2>
         <p className='text-[#ADB7BE] mb-4 max-w-md'>
           {' '}
           I&apos;m currently looking for new internship opportunities, my inbox
@@ -72,14 +83,40 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-        <form className='flex flex-col ' onSubmit={handleSubmit}>
+        <form
+          className='flex flex-col '
+          onSubmit={(e) => {
+            if (spamDelay > 0) {
+              e.preventDefault();
+              setShowWarning(true);
+            } else {
+              handleSubmit(e);
+            }
+          }}
+        >
+          <div className='mb-6'>
+            <label
+              htmlFor='name'
+              type='text'
+              className='text-white block  text-sm mb-2 font-medium'
+            >
+              Your Name
+            </label>
+            <input
+              name='name'
+              type='text'
+              id='name'
+              required
+              className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
+              placeholder='John Smith'
+            />
+          </div>
           <div className='mb-6'>
             <label
               htmlFor='email'
-              type='email'
-              className='text-white block  text-sm mb-2 font-medium'
+              className='text-white block text-sm mb-2 font-medium'
             >
-              Your email
+              Your Email
             </label>
             <input
               name='email'
@@ -92,48 +129,32 @@ const EmailSection = () => {
           </div>
           <div className='mb-6'>
             <label
-              htmlFor='subject'
-              className='text-white block text-sm mb-2 font-medium'
-            >
-              Subject
-            </label>
-            <input
-              name='subject'
-              type='text'
-              id='subject'
-              required
-              className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
-              placeholder='Lets talk!'
-            />
-          </div>
-          <div className='mb-6'>
-            <label
               htmlFor='message'
               className='text-white block text-sm mb-2 font-medium'
             >
-              Message
+              Your Message
             </label>
             <textarea
               name='message'
               id='message'
               className='bg-[#18191E] z-10 border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
-              placeholder='Tell me about your project...'
+              placeholder="Let's talk about..."
             />
           </div>
           <button
             type='submit'
-            className='bg-teal-500 hover:bg-teal-600 text-white font-medium py-2.5 px-5 rounded-lg w-full z-10'
+            className='bg-teal-500 shadow-md shadow-teal-700 hover:bg-teal-600 text-white font-medium py-2.5 px-5 rounded-lg w-full z-10'
           >
-            Send Message
+            {sending ? 'Sending...' : 'Send'}
           </button>
           <p
-            className={`text-green-500 text-semibold text-sm mt-2 ${
-              emailSubmitted
+            className={`text-red-500 text-semibold text-sm mt-2 ${
+              showWarning
                 ? 'opacity-100 transition-opacity duration-1000'
                 : 'opacity-0 transition-opacity duration-1000'
             }`}
           >
-            Email Sent Successfully!
+            Please wait {spamDelay} seconds before sending another message.
           </p>
         </form>
       </div>
