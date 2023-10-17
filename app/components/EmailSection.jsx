@@ -143,7 +143,7 @@ const EmailSection = () => {
           </div>
           <button
             type='submit'
-            className='bg-teal-500 shadow-md shadow-teal-700 hover:bg-teal-600 text-white font-medium py-2.5 px-5 rounded-lg w-full z-10'
+            className='btn-gradient shadow-md shadow-teal-700  text-white font-medium py-2.5 px-5 rounded-lg w-full z-10'
           >
             {sending ? 'Sending...' : 'Send'}
           </button>

@@ -17,6 +17,16 @@
   }
 }
 
+@layer components {
+  .btn-gradient {
+    background-image: linear-gradient(to bottom right, #3B82F6, #3AC7AC, #109960);
+  }
+
+  .btn-gradient:hover {
+    background-image: linear-gradient(to bottom right, #2563EB, #288d7b, #047857);
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
