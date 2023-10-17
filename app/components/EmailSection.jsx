@@ -71,7 +71,7 @@ const EmailSection = () => {
           {' '}
           I&apos;m currently looking for new internship opportunities, my inbox
           is always open. Whether you have a question or just want to say hi,
-          I&apos;ll get back to you!
+          I&apos;ll get back to you as soon a possible!
         </p>
         <div className='socials flex flex-row gap-2'>
           <Link href='https://github.com/jcamp50'>
