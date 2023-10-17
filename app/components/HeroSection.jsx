@@ -50,12 +50,12 @@ const HeroSection = () => {
           <div>
             <Link
               href='/#contact'
-              className='px-6 py-3 inline-block md:px-12 md:py-4 md:text-lg w-full sm:w-fit rounded-lg mr-4 shadow-md shadow-teal-700 btn-gradient text-white'
+              className='px-6 py-3 inline-block md:px-12 md:py-4 md:text-lg w-full sm:w-fit rounded-full mr-4 shadow-md shadow-teal-700 btn-gradient text-white'
             >
               Contact Me
             </Link>
             <Link
-              className='px-6 py-3 inline-block md:px-12 md:py-4 md:text-lg w-full sm:w-fit rounded-lg mr-4 shadow-md shadow-teal-700 btn-gradient text-white mt-3'
+              className='px-6 py-3 inline-block md:px-12 md:py-4 md:text-lg w-full sm:w-fit rounded-full mr-4 shadow-md shadow-teal-700 btn-gradient text-white mt-3'
               href='/Jordan_Campbell_Resume.pdf' // adjust this path to your actual file's location
               download
             >
