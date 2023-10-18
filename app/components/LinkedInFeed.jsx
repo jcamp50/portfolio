@@ -1,34 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const LinkedInFeed = () => {
+  const initializedRef = useRef(false);
+
   useEffect(() => {
-    // Create a new script element
+    if (!initializedRef.current) {
+      const script = document.createElement('script');
+      script.src =
+        'https://widgets.sociablekit.com/linkedin-profile-posts/widget.js';
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
 
-    const scriptId = 'linkedin-widget-script';
+      initializedRef.current = true;
 
-    if (document.getElementById(scriptId)) {
-      // If script is already present in the document, don't add again
-      return;
+      return () => {
+        document.body.removeChild(script);
+      };
     }
-    const script = document.createElement('script');
-    script.src =
-      'https://widgets.sociablekit.com/linkedin-profile-posts/widget.js';
-    script.async = true;
-    script.defer = true;
-
-    // Append the script to the document body
-    document.body.appendChild(script);
-
-    // Optional: Remove the script on component unmount
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []); // The empty array means this useEffect will run once when the component mounts
+  });
 
   return (
-    <section>
-      <div className='sk-ww-linkedin-profile-post' data-embed-id='211410'></div>
-    </section>
+    <div
+      className='sk-ww-linkedin-profile-post flex flex-col items-center justify-center mb-4'
+      data-embed-id='211410'
+    ></div>
   );
 };
 

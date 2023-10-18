@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import GitHubCalendar, { Props } from 'react-github-calendar';
 import GitHubButton from 'react-github-btn';
 
@@ -25,8 +25,6 @@ const GithubContributions = () => {
   return (
     <section className='py-8'>
       <div className='flex flex-col items-center justify-center mb-4'>
-        <h2 className='text-4xl font-bold text-white mb-6'>Activity</h2>
-
         <GitHubButton
           href={`https://github.com/${username}`}
           data-color-scheme='no-preference: light; light: light; dark: dark;'
@@ -43,14 +41,16 @@ const GithubContributions = () => {
             username={username}
             transformData={selectLastHalfYear}
             fontSize={16}
+            blockSize={18}
+            
           />
         </div>
         <div className='overflow-x-auto hidden md:block'>
-          <GitHubCalendar username={username} fontSize={16} />
+          <GitHubCalendar username={username} fontSize={22} blockSize={18} />
         </div>
       </div>
     </section>
   );
 };
 
-export default GithubContributions
+export default GithubContributions;
