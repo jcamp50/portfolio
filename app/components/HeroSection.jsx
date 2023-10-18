@@ -40,7 +40,7 @@ const HeroSection = () => {
               ]}
               wrapper='span'
               speed={30}
-              repeat={isInView ? 0 : Infinity}
+              repeat={isInView ? Infinity : 0}
             />
           </h1>
           <p className='text-transparent text-base sm:text-md'>
