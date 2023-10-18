@@ -20,7 +20,7 @@ const HeroSection = () => {
         >
           <h1
             ref={ref}
-            className='text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold'
+            className='text-white mb-4 text-5xl sm:text-6xl lg:text-8xl lg:leading-normal font-extrabold'
           >
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-green-600'>
               Hello, I&apos;m{' '}

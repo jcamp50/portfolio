@@ -19,7 +19,7 @@
 
 @layer components {
   .btn-gradient {
-    background-image: linear-gradient(to bottom right, #3B82F6, #3AC7AC, #109960);
+    background-image: linear-gradient(to bottom right, #3B82F6, #3AC7AC, #096b2a);
   }
 
   .btn-gradient:hover {
