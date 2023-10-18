@@ -2,40 +2,31 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import Calendar from 'react-github-calendar';
+import GitHubCalendar from 'react-github-calendar';
+import GitHubButton from 'react-github-btn';
 
-
-
-const achievementsList = [
-  {
-    metric: 'Projects',
-    value: '100',
-    postfix: '+',
-  },
-  {
-    prefix: '~',
-    metric: 'Users',
-    value: '100,000',
-  },
-  {
-    metric: 'Awards',
-    value: '7',
-  },
-  {
-    metric: 'Years',
-    value: '5',
-  },
-];
+let username = 'jcamp50';
 
 const AchievementsSection = () => {
   return (
-    <Image
-      src='https://ghchart.rshah.org/jcamp50'
-      alt="Year's contributions"
-      width={900}
-      height={100}
-
-    />
+    <section className='py-8'>
+      <div className=''>
+        <h2 className='text-4xl font-bold text-white mb-4'>Activity</h2>
+        <GitHubButton
+          href={`https://github.com/${username}`}
+          data-color-scheme='no-preference: light; light: light; dark: dark;'
+          data-icon='octicon-icon'
+          data-size='large'
+          data-show-count='false'
+          aria-label="View jcamp50's profile on GitHub"
+        >
+          jcamp50
+        </GitHubButton>
+      </div>
+      <div className='overflow-x-auto'>
+        <GitHubCalendar username={username} fontSize={16} />
+      </div>
+    </section>
   );
 };
 
