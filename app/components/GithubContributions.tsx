@@ -42,7 +42,9 @@ const GithubContributions = () => {
             transformData={selectLastHalfYear}
             fontSize={16}
             blockSize={18}
-            
+            labels={{
+              totalCount: '{{count}} contributions in the last half year',
+            }}
           />
         </div>
         <div className='overflow-x-auto hidden md:block'>

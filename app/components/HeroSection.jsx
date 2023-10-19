@@ -1,13 +1,13 @@
 'use client';
-import React, { useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 
 const HeroSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  
+  
 
   return (
     <section className='lg:py-16'>
@@ -19,7 +19,7 @@ const HeroSection = () => {
           className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
         >
           <h1
-            ref={ref}
+            
             className='text-white mb-4 text-5xl sm:text-6xl lg:text-8xl lg:leading-normal font-extrabold'
           >
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-green-600'>
@@ -40,7 +40,7 @@ const HeroSection = () => {
               ]}
               wrapper='span'
               speed={30}
-              repeat={isInView ? Infinity : 0}
+              repeat={Infinity}
             />
           </h1>
           <p className='text-transparent text-base sm:text-md'>
@@ -50,16 +50,21 @@ const HeroSection = () => {
           <div>
             <Link
               href='/#contact'
-              className='px-6 py-3 inline-block md:px-12 md:py-4 md:text-lg w-full sm:w-fit rounded-full mr-4 shadow-md shadow-teal-700 btn-gradient text-white'
+              
+              className='px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 shadow-md shadow-teal-700 btn-gradient text-white'
             >
-              Contact Me
+              <span className='block bg-[#121212] hover:bg-[#1f1f1f] rounded-full px-5 py-2 md:px-12 md:py-4 md:text-lg'>
+                Contact Me
+              </span>
             </Link>
             <Link
-              className='px-6 py-3 inline-block md:px-12 md:py-4 md:text-lg w-full sm:w-fit rounded-full mr-4 shadow-md shadow-teal-700 btn-gradient text-white mt-3 mb-3'
+              className='px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 shadow-md shadow-teal-700 btn-gradient text-white mt-3 mb-3'
               href='/Jordan_Campbell_Resume.pdf' // adjust this path to your actual file's location
               download
             >
-              My Resume
+              <span className='block bg-[#121212] hover:bg-[#1f1f1f] rounded-full px-5 py-2 md:px-12 md:py-4 md:text-lg'>
+                My Resume
+              </span>
             </Link>
           </div>
         </motion.div>
