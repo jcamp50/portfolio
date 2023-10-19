@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -14,6 +17,16 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
 
+  }
+}
+
+@layer components {
+  .btn-gradient {
+    background-image: linear-gradient(to bottom right, #3B82F6, #3AC7AC, #096b2a);
+  }
+
+  .btn-gradient:hover {
+    background-image: linear-gradient(to bottom right, #2563EB, #288d7b, #047857);
   }
 }
 
