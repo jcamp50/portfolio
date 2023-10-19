@@ -13,9 +13,13 @@ const EducationTag = ({ icon, name, degree, date, GPA }) => {
       </div>
       <div className='flex flex-col'>
         <h1 className='text-xs sm:text-sm md:text-xs lg:text-sm font-extrabold '>
-          {date}{' '}
+          Graduating:
         </h1>
+        <h2 className='text-xs sm:text-sm md:text-xs lg:text-sm'>{date}</h2>
+        <div className='flex flex-row gap-1 mt-2'>
+        <h1 className='text-xs sm:text-sm md:text-xs lg:text-sm font-extrabold'>GPA:</h1>
         <h2 className='text-xs sm:text-sm md:text-xs lg:text-sm'>{GPA}</h2>
+        </div>
       </div>
     </div>
   );

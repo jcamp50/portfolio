@@ -40,7 +40,7 @@ const GithubContributions = () => {
           <GitHubCalendar
             username={username}
             transformData={selectLastHalfYear}
-            fontSize={16}
+            fontSize={12}
             blockSize={18}
             labels={{
               totalCount: '{{count}} contributions in the last half year',

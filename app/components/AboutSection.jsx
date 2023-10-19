@@ -32,8 +32,8 @@ const EDUCATIONS = [
     icon: UCFIcon,
     name: 'University of Central Florida',
     degree: 'Bachelor of Science, Computer Science',
-    date: 'Expected Grad: May 2026',
-    GPA: 'GPA: 3.6',
+    date: 'May 2026',
+    GPA: '3.6',
   },
 ];
 
