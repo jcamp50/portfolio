@@ -19,14 +19,16 @@ const ActivitySection = () => {
       <h2 className='flex text-4xl font-bold justify-center mt-10 text-white mb-6'>
         Activity
       </h2>
-      <Slider {...settings}>
-        <div>
-          <GithubContributions />
-        </div>
-        <div>
-          <LinkedInFeed />
-        </div>
-      </Slider>
+      <div className='font-mono'>
+        <Slider {...settings}>
+          <div>
+            <GithubContributions />
+          </div>
+          <div>
+            <LinkedInFeed />
+          </div>
+        </Slider>
+      </div>
     </section>
   );
 };

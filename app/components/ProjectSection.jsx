@@ -8,20 +8,20 @@ const projectsData = [
   {
     id: 1,
     title: 'React Portfolio Website',
-    description: 'Project 1 description',
+    description: 'My personal portfolio website',
     image: '/images/projects/1.png',
     tag: ['All', 'Web'],
-    gitUrl: '/',
-    previewUrl: '/',
+    gitUrl: 'https://github.com/jcamp50/portfolio',
+    previewUrl: 'https://www.jordancampbell.me/',
   },
   {
     id: 2,
-    title: 'Potography Portfolio Website',
-    description: 'Project 2 description',
+    title: 'FPL Prediction Web-App',
+    description: 'ShellHacks 2023 Project',
     image: '/images/projects/2.png',
     tag: ['All', 'Web'],
-    gitUrl: '/',
-    previewUrl: '/',
+    gitUrl: 'https://github.com/jcamp50/fpl-app',
+    previewUrl: 'https://fpl-app-rho.vercel.app/',
   },
   {
     id: 3,
@@ -84,7 +84,7 @@ const ProjectSection = () => {
       <h2 className='text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12'>
         My Projects
       </h2>
-      <div className='text-white flex flex-row justify-center items-center gap-2 py-6'>
+      <div className='font-mono text-white flex flex-row justify-center items-center gap-2 py-6'>
         <ProjectTag
           onClick={handleTagChange}
           name='All'
@@ -101,7 +101,7 @@ const ProjectSection = () => {
           isSelected={tag === 'Mobile'}
         />
       </div>
-      <ul ref={ref} className='grid md:grid-cols-3 gap-8 md:gap-12'>
+      <ul ref={ref} className='font-mono grid md:grid-cols-3 gap-8 md:gap-12'>
         {filteredProjects.map((project, index) => (
           <motion.li
             key={index}

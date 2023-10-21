@@ -18,10 +18,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
         >
-          <h1
-            
-            className='text-white mb-4 text-5xl sm:text-6xl lg:text-8xl lg:leading-normal font-extrabold'
-          >
+          <h1 className='text-white mb-4 text-5xl sm:text-6xl lg:text-8xl lg:leading-normal font-extrabold'>
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-green-600'>
               Hello, I&apos;m{' '}
             </span>
@@ -47,10 +44,9 @@ const HeroSection = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
             voluptatum.
           </p>
-          <div>
+          <div className='font-mono'>
             <Link
               href='/#contact'
-              
               className='px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 shadow-md shadow-teal-700 btn-gradient text-white'
             >
               <span className='block bg-[#121212] hover:bg-[#1f1f1f] rounded-full px-5 py-2 md:px-12 md:py-4 md:text-lg'>

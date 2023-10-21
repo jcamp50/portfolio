@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const EducationTag = ({ icon, name, degree, date, GPA }) => {
   return (
-    <div className=' w-full flex flex-row px-6 py-2 items-center justify-start border rounded-xl sm:rounded-full md:rounded-xl lg:rounded-full font-semibold gap-2  text-[#121212] bg-[#ffffff]'>
+    <div className='font-sans w-full flex flex-row px-6 py-2 items-center justify-start border rounded-xl sm:rounded-full md:rounded-xl lg:rounded-full font-semibold gap-2  text-[#121212] bg-[#ffffff]'>
       <Image src={icon} width={50} height={50} alt={`${name} icon`} />
       <div className='mr-4 flex flex-col'>
         <h1 className='text-xs sm:text-sm md:text-xs lg:text-sm font-extrabold'>

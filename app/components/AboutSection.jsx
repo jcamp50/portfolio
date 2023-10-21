@@ -89,7 +89,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className='text-white' id='about'>
+    <section className=' text-white' id='about'>
       <div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'>
         <Image
           src='/images/about-image6.png'
@@ -100,7 +100,7 @@ const AboutSection = () => {
         />
         <div className='mt-4 md:mt-0 text-left flex flex-col h-full'>
           <h2 className='text-4xl font-bold text-white mb-4'>About Me</h2>
-          <p className='text-base text-[#ADB7BE] lg:text-lg'>
+          <p className='font-mono text-base text-[#ADB7BE] lg:text-lg'>
             I&apos;m a Computer Science major with a passion for bringing ideas
             to life. Developing and designing responsive websites and
             applications that offer engaging user experiences is what I enjoy
