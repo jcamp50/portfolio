@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import NavLink from './NavLink';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
@@ -24,13 +24,33 @@ const navLinks = [
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className='fixed mx-auto border border-[#121212] border-b-[#33353F] top-0 left-0 right-0 z-20 bg-[#121212] bg-opacity-95'>
-      <div className='flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2'>
+    <nav className='font-mono fixed inset-x-0 top-0 z-20 px-4 py-1 mx-auto left-0 right-0 bg-transparent '>
+      <div
+        className='slider bg-opacity-10'
+        style={{ transform: scrolled ? 'translateX(0)' : 'translateX(100%)' }}
+      ></div>
+      <div className='flex container flex-wrap items-center justify-between mx-auto px-4 py-2'>
         <Link
           href={'/'}
-          className='text-2xl md:text-3xl text-[#33353F] font-semibold'
+          className='text-2xl md:text-3xl text-white '
         >
           &lt;portfolio&gt;
         </Link>
