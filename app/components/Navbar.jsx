@@ -42,16 +42,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className='font-mono fixed inset-x-0 top-0 z-20 px-4 py-1 mx-auto left-0 right-0 bg-transparent '>
+    <nav className='font-mono fixed inset-x-0 top-0 z-20 px-4 py-1 mx-auto left-0 right-0 bg-transparent backdrop-blur-sm'>
       <div
         className='slider bg-opacity-10'
-        style={{ transform: scrolled ? 'translateX(0)' : 'translateX(100%)' }}
+        style={{
+          transform:
+            scrolled || navbarOpen ? 'translateX(0)' : 'translateX(100%)',
+        }}
       ></div>
       <div className='flex container flex-wrap items-center justify-between mx-auto px-4 py-2'>
-        <Link
-          href={'/'}
-          className='text-2xl md:text-3xl text-white '
-        >
+        <Link href={'/'} className='text-2xl md:text-3xl text-white '>
           &lt;portfolio&gt;
         </Link>
         <div className='mobile-menu block md:hidden'>

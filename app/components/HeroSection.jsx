@@ -47,14 +47,14 @@ const HeroSection = () => {
           <div className='font-mono'>
             <Link
               href='/#contact'
-              className='px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 shadow-md shadow-teal-700 btn-gradient text-white'
+              className='px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 btn-gradient text-white'
             >
               <span className='block bg-[#121212] hover:bg-[#1f1f1f] rounded-full px-5 py-2 md:px-12 md:py-4 md:text-lg'>
                 Contact Me
               </span>
             </Link>
             <Link
-              className='px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 shadow-md shadow-teal-700 btn-gradient text-white mt-3 mb-3'
+              className='px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 0 btn-gradient text-white mt-3 mb-3'
               href='/Jordan_Campbell_Resume.pdf' // adjust this path to your actual file's location
               download
             >
