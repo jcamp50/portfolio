@@ -34,30 +34,12 @@ const projectsData = [
   },
   {
     id: 4,
-    title: 'Food Ordering Application',
-    description: 'Project 4 description',
+    title: 'Rogue Knight',
+    description: 'KnightHacks 2023 Team Project',
     image: '/images/projects/4.png',
-    tag: ['All', 'Mobile'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 5,
-    title: 'React Firebase Template',
-    description: 'Authentication and CRUD operations',
-    image: '/images/projects/5.png',
-    tag: ['All', 'Web'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 6,
-    title: 'Full-stack Roadmap',
-    description: 'Project 5 description',
-    image: '/images/projects/6.png',
-    tag: ['All', 'Web'],
-    gitUrl: '/',
-    previewUrl: '/',
+    tag: ['All', 'Game'],
+    gitUrl: 'https://github.com/jcamp50/Roguelike',
+    previewUrl: 'https://youtu.be/6BlmIkB09F8',
   },
 ];
 
@@ -97,8 +79,8 @@ const ProjectSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name='Mobile'
-          isSelected={tag === 'Mobile'}
+          name='Game'
+          isSelected={tag === 'Game'}
         />
       </div>
       <ul

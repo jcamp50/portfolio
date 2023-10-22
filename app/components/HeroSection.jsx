@@ -6,9 +6,6 @@ import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 
 const HeroSection = () => {
-  
-  
-
   return (
     <section className='lg:py-16'>
       <div className='grid grid-cols-1 sm:grid-cols-12'>
@@ -18,7 +15,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
         >
-          <h1 className='text-white mb-4 text-5xl sm:text-6xl lg:text-8xl lg:leading-normal font-extrabold'>
+          <h1 className='text-white h-32 lg:h-96 text-5xl sm:text-6xl xl:h-44 lg:text-7xl/5 lg:leading-normal font-extrabold'>
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-green-600'>
               Hello, I&apos;m{' '}
             </span>
@@ -30,13 +27,13 @@ const HeroSection = () => {
                 5000,
                 'a Software Engineer.',
                 2000,
-                'a Front-End Dev.',
+                'a Front-End Developer.',
                 2000,
                 'a UI/UX Designer.',
                 2000,
               ]}
               wrapper='span'
-              speed={30}
+              speed={40}
               repeat={Infinity}
             />
           </h1>
@@ -44,7 +41,7 @@ const HeroSection = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
             voluptatum.
           </p>
-          <div className='font-mono'>
+          <div className='mt-4 font-mono'>
             <Link
               href='/#contact'
               className='px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 btn-gradient text-white'
