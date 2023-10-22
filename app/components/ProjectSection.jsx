@@ -25,12 +25,12 @@ const projectsData = [
   },
   {
     id: 3,
-    title: 'E-commerce Application',
-    description: 'Project 3 description',
+    title: 'Connect 4 Game Clone',
+    description: 'My first React project',
     image: '/images/projects/3.png',
     tag: ['All', 'Web'],
-    gitUrl: '/',
-    previewUrl: '/',
+    gitUrl: 'https://github.com/jcamp50/connect4',
+    previewUrl: 'https://connect4-three-ruddy.vercel.app/',
   },
   {
     id: 4,
@@ -101,7 +101,10 @@ const ProjectSection = () => {
           isSelected={tag === 'Mobile'}
         />
       </div>
-      <ul ref={ref} className='font-mono grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12'>
+      <ul
+        ref={ref}
+        className='font-mono grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12'
+      >
         {filteredProjects.map((project, index) => (
           <motion.li
             key={index}
