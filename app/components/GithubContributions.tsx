@@ -27,7 +27,7 @@ const GithubContributions = () => {
       <div className='flex flex-col items-center justify-center mb-4'>
         <GitHubButton
           href={`https://github.com/${username}`}
-          data-color-scheme='no-preference: light; light: light; dark: dark;'
+          data-color-scheme='dark;'
           data-icon='octicon-icon'
           data-size='large'
           data-show-count='false'
@@ -42,6 +42,7 @@ const GithubContributions = () => {
             transformData={selectLastHalfYear}
             fontSize={12}
             blockSize={18}
+            colorScheme='dark'
             labels={{
               totalCount: '{{count}} contributions in the last half year',
             }}
