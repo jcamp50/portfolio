@@ -27,7 +27,7 @@ const GithubContributions = () => {
       <div className='flex flex-col items-center justify-center mb-4'>
         <GitHubButton
           href={`https://github.com/${username}`}
-          data-color-scheme='dark;'
+          data-color-scheme='no-preference: dark; light: dark; dark: dark;'
           data-icon='octicon-icon'
           data-size='large'
           data-show-count='false'
@@ -36,7 +36,7 @@ const GithubContributions = () => {
           jcamp50
         </GitHubButton>
 
-        <div className='overflow-x-auto md:hidden'>
+        <div className='overflow-x-auto md:hidden text-white'>
           <GitHubCalendar
             username={username}
             transformData={selectLastHalfYear}
