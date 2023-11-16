@@ -23,7 +23,7 @@ const LinkedInFeed = () => {
   return (
     <div
       className='sk-ww-linkedin-profile-post flex flex-col items-center justify-center mb-4'
-      data-embed-id='211410'
+      data-embed-id='226999'
     ></div>
   );
 };
