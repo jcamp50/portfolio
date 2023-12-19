@@ -20,14 +20,7 @@ const ActivitySection = () => {
         Activity
       </h2>
       <div className='font-mono'>
-        <Slider {...settings}>
-          <div>
             <GithubContributions />
-          </div>
-          <div>
-            <LinkedInFeed />
-          </div>
-        </Slider>
       </div>
     </section>
   );
