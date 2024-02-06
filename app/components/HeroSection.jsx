@@ -27,7 +27,7 @@ const HeroSection = () => {
                 5000,
                 'a Software Engineer.',
                 2000,
-                'a Front-End Developer.',
+                'a Web Developer.',
                 2000,
                 'a UI/UX Designer.',
                 2000,
