@@ -1,8 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import { futuraHeavyOblique, gestura } from './fonts';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Jordan Campbell',
@@ -15,7 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html
+      lang='en'
+      className={`${futuraHeavyOblique.variable} ${gestura.variable}`}
+    >
       <head>
         <meta
           name='viewport'
@@ -23,7 +25,7 @@ export default function RootLayout({
         />
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -9,13 +9,14 @@ import Image from 'next/image';
 
 const navLinks = [
   {
-    title: 'Activity',
-    path: '#activity',
-  },
-  {
     title: 'About',
     path: '#about',
   },
+  {
+    title: 'Activity',
+    path: '#activity',
+  },
+
   {
     title: 'Projects',
     path: '#projects',
@@ -25,6 +26,8 @@ const navLinks = [
     path: '#contact',
   },
 ];
+
+
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -46,7 +49,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className='font-mono fixed inset-x-0 top-0 z-20 px-4 py-1 mx-auto left-0 right-0 bg-transparent backdrop-blur-sm'>
+    <nav className='animated-border font-mono w-3/4 fixed rounded-2xl border-2 border-[#6b756e] inset-x-0 top-5 z-20 px-4 py-1 mx-auto left-0 right-0 bg-[#242424]/80 backdrop-blur-sm'>
       <div
         className='slider bg-opacity-10'
         style={{
@@ -55,8 +58,11 @@ const Navbar = () => {
         }}
       ></div>
       <div className='flex container flex-wrap items-center justify-between mx-auto px-4 py-2'>
-        <Link href={'/'} className='text-2xl md:text-3xl text-white '>
-          &lt;portfolio&gt;
+        <Link
+          href={'/'}
+          className='text-2xl md:text-3xl font-bold font-serif bg-clip-text text-transparent bg-gradient-to-r from-white to-[#3cce6d]'
+        >
+          jordancampbell
         </Link>
         <div className='mobile-menu block md:hidden'>
           {!navbarOpen ? (

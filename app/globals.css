@@ -2,11 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
@@ -20,52 +18,10 @@
   }
 }
 
-@layer components {
-  .btn-gradient {
-    background-image: linear-gradient(to bottom right, #2dd4bf, #16a34a);
-  }
-
-  .btn-gradient:hover {
-    background-image: linear-gradient(to bottom right, #288d7b, #047857);
-  }
-
-    nav .slider {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      background: linear-gradient(to right, #047857, #121212);
-      transition: transform 0.2s ease-in-out;
-      z-index: -1;
-      opacity: 95%;
-    }
-  
-    /* Adjust the color of the text, icons, and border to ensure they are visible on both background colors */
-    nav,
-    nav .mobile-menu button,
-    nav .menu ul li a {
-      color: #fff;
-      border-color: #fff;
-    }
-  
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-    margin: 0;
-    /* Add this line to remove default body margin */
-    padding: 0;
-    /* Add this line to remove default body padding */
-    overflow-x: hidden;
-    /* This prevents horizontal scrolling */
-    -webkit-overflow-scrolling: touch;
-    /* Add these Tailwind classes to ensure full-width content */
-
+@font-face {
+  font-family: 'Futura Heavy Oblique';
+  src: url('/fonts/FuturaHeavyOblique.otf') format('opentype');
+  font-weight: 700;
+  font-style: oblique;
+  font-display: swap;
 }

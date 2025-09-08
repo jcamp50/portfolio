@@ -9,16 +9,17 @@ import ActivitySection from './components/ActivitySection';
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col bg-[#121212]'>
-      <Navbar />
-      <div className='container mt-24 mx-auto px-6 sm:px-10 py-4'>
+    <main className='flex min-h-screen flex-col bg-[#ffffff]'>
+      {/* <Navbar /> */}
+      <div className='w-full mt-24 px-12'>
         <HeroSection />
-        <ActivitySection />
-        <AboutSection />
-        <ProjectSection />
-        <EmailSection />
+
+        {/* <ActivitySection /> */}
+        {/* <AboutSection /> */}
+        {/* <ProjectSection /> */}
+        {/* <EmailSection /> */}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }
