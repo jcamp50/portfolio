@@ -34,6 +34,67 @@
 
 }
 
+/* Fade in */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+
+/* Softer bounce (smaller travel + smoother ease) */
+@keyframes soft-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+
+  /* tweak: 4–10px */
+}
+
+/* Helper class for your arrow */
+.arrow-reveal {
+  opacity: 0;
+  /* start invisible */
+  /* run fade-in once, then keep bouncing softly */
+  animation:
+    fade-in 800ms ease-out 1.7s forwards,
+    /* delay ~1.6s; adjust to taste */
+    soft-bounce 1.8s ease-in-out 2.2s infinite;
+  /* starts after fade finishes */
+}
+
+@keyframes track-in {
+  0% {
+    letter-spacing: 0.4em;
+    opacity: 0;
+  }
+
+  100% {
+    letter-spacing: 0.25em;
+    opacity: 1;
+  }
+}
+
+/* reveal for the microcopy below the arrow */
+.microcopy-reveal {
+  opacity: 0;
+  /* delay slightly after arrow so they feel staged */
+  animation:
+    fade-in 500ms ease-out 1.6s forwards,
+    track-in 700ms ease-out 1.6s forwards;
+}
+
 .sticky-lead {
   position: sticky;
   top: calc(50% - 0.5lh);

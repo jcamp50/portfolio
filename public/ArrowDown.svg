@@ -1,0 +1,12 @@
+<!-- ArrowDownSharp.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- square corners, no rounding -->
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter">
+    <!-- tail -->
+    <line x1="12" y1="3" x2="12" y2="17"/>
+    <!-- chevron head -->
+    <polyline points="6,11 12,17 18,11"/>
+  </g>
+</svg>
+
+
