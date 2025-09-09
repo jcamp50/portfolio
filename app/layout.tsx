@@ -16,6 +16,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
+      data-snap='true'
       className={`${futuraHeavyOblique.variable} ${gestura.variable}`}
     >
       <head>

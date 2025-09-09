@@ -7,6 +7,133 @@
 
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+    --font-size-min: 14;
+      --font-size-max: 20;
+      --font-ratio-min: 1.1;
+      --font-ratio-max: 1.33;
+      --font-width-min: 375;
+      --font-width-max: 1500;
+}
+
+:where(.fluid) {
+  --font-level: 6;
+  --fluid-min: calc(var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0)));
+  --fluid-max: calc(var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0)));
+  --fluid-preferred: calc((var(--fluid-max) - var(--fluid-min)) / (var(--font-width-max) - var(--font-width-min)));
+  --fluid-type: clamp((var(--fluid-min)/16)*1rem,
+      ((var(--fluid-min)/16)*1rem) - (((var(--fluid-preferred)*var(--font-width-min))/16)*1rem) + (var(--fluid-preferred)*var(--variable-unit, 100vi)),
+      (var(--fluid-max)/16)*1rem);
+  font-size: var(--fluid-type);
+}
+
+.content.fluid {
+  --font-level: 6;
+  display: flex;
+  line-height: 1.25;
+  width: 100%;
+
+}
+
+.sticky-lead {
+  position: sticky;
+  top: calc(50% - 0.5lh);
+  font-size: inherit;
+  margin: 0;
+  display: inline-block;
+  height: fit-content;
+  font-weight: 600;
+}
+
+[data-snap='true'] {
+  scroll-snap-type: y proximity;
+
+}
+
+[data-snap='true'] ul[data-scroll-phrase] li {
+  scroll-snap-align: center;
+}
+
+ul[data-scroll-phrase] {
+  font-weight: 600;
+  padding-inline: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.text-gradient-clip {
+  background: linear-gradient(canvasText 50%,
+      color-mix(in oklch, canvas, canvasText 25%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gradient text treatment on the heading & the last li (from the pen) */
+.sticky-lead,
+ul[data-scroll-phrase] li:last-of-type {
+  background: linear-gradient(canvasText 50%,
+      color-mix(in oklch, canvas, canvasText 25%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Color ramp per item (from the pen's effect layer) */
+:root {
+  --start: 30;
+  --end: 360;
+  --lightness: 65%;
+  --base-chroma: 0.3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lightness: 75%;
+  }
+}
+
+ul[data-scroll-phrase] {
+  --step: calc((var(--end) - var(--start)) / (var(--count) - 1));
+}
+
+ul[data-scroll-phrase] li:not(:last-of-type) {
+  color: oklch(var(--lightness) var(--base-chroma) calc(var(--start) + (var(--step) * var(--i))));
+}
+
+/* Scroll-linked animation version (native) */
+@supports (animation-timeline: view()) {
+  [data-animate='true'] ul[data-scroll-phrase] li {
+    opacity: 0.2;
+    animation-name: brighten;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-range: cover calc(50% - 1lh) calc(50% + 1lh);
+    animation-timeline: view();
+  }
+
+  [data-animate='true'] ul[data-scroll-phrase] li:first-of-type {
+    --start-opacity: 1;
+  }
+
+  [data-animate='true'] ul[data-scroll-phrase] li:last-of-type {
+    --brightness: 1;
+    --end-opacity: 1;
+  }
+
+  @keyframes brighten {
+    0% {
+      opacity: var(--start-opacity, 0.2);
+    }
+
+    50% {
+      opacity: 1;
+      filter: brightness(var(--brightness, 1.2));
+    }
+
+    100% {
+      opacity: var(--end-opacity, 0.2);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,10 +145,16 @@
   }
 }
 
-@font-face {
-  font-family: 'Futura Heavy Oblique';
-  src: url('/fonts/FuturaHeavyOblique.otf') format('opentype');
-  font-weight: 700;
-  font-style: oblique;
-  font-display: swap;
+.sr-only {
+    position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
 }
+
+
