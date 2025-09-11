@@ -121,6 +121,29 @@ ul[data-scroll-phrase] {
   list-style-type: none;
 }
 
+@keyframes tech-marquee-move {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+  /* because we doubled the tape */
+}
+
+.tech-marquee {
+  animation: tech-marquee-move var(--speed, 40s) linear infinite;
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee {
+    animation: none;
+  }
+}
+
 .text-gradient-clip {
   background: linear-gradient(canvasText 50%,
       color-mix(in oklch, canvas, canvasText 25%));

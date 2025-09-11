@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ExperienceCard from './ExperienceCard';
+import StackBar from './StackBar';
 
 const ExperienceSection = () => {
   const items = [
@@ -171,6 +172,10 @@ const ExperienceSection = () => {
             ]}
           />
         </div>
+      </div>
+      {/* --- Tech divider --- */}
+      <div className='mt-36 w-full'>
+        <StackBar />
       </div>
     </section>
   );
