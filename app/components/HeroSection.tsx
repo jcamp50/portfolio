@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import heroLaptop from '@/public/images/hero-image-laptop.png';
 import ScrollPhrase from './ScrollPhrase';
-import ArrowDown from '@/public/ArrowDown.svg';
+import ArrowDown from '@/public/Icons/ArrowDown.svg';
 
 const HeroSection = () => {
   return (
@@ -32,7 +32,7 @@ const HeroSection = () => {
           </div>
         </div>
         {/* Right: Red Background with Image */}
-        <div className='flex-1 flex justify-end'>
+        <div className='flex-1 flex justify-end '>
           <div
             className='w-[800px] h-[770px] p-10 flex items-center justify-center'
             style={{
@@ -45,7 +45,7 @@ const HeroSection = () => {
               alt='Hero image'
               width={650}
               height={650}
-              className='object-contain drop-shadow-xl'
+              className='object-contain drop-shadow-md'
               priority
               quality={100}
               sizes='(min-width: 1024px) 650px, 60vw'
