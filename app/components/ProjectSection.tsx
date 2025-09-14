@@ -121,6 +121,20 @@ const ProjectSection = () => {
           </div>
         </article>
       </div>
+      {/* Archives / Past Collections link */}
+      <div className='mt-20 flex flex-col items-center text-center'>
+        <p className='font-gestura text-xl text-black/60'>
+          Explore earlier releases and experimental builds in the{' '}
+          <a
+            href='https://github.com/jcamp50'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='underline underline-offset-4 hover:text-[#F61111] transition-colors'
+          >
+            archives →
+          </a>
+        </p>
+      </div>
     </section>
   );
 };

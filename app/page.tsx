@@ -1,11 +1,12 @@
-import Image from 'next/image';
+
 import HeroSection from './components/HeroSection';
 import ExperienceSection from './components/ExperienceSection';
 import Navbar from './components/Navbar';
-import EmailSection from './components/EmailSection';
+
 import Footer from './components/Footer';
-import ActivitySection from './components/ActivitySection';
+
 import ProjectSection from './components/ProjectSection';
+import ContactSection from './components/ContactSection';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <HeroSection />
         <ExperienceSection />
         <ProjectSection/>
+        <ContactSection />
 
         {/* <ActivitySection /> */}
         {/* <AboutSection /> */}
