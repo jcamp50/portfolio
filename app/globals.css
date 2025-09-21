@@ -121,6 +121,18 @@ ul[data-scroll-phrase] {
   list-style-type: none;
 }
 
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
+}
+
 @keyframes tech-marquee-move {
   from {
     transform: translateX(0);

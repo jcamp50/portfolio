@@ -1,5 +1,7 @@
 import React from 'react';
 import StackBar from './StackBar';
+import Image from 'next/image';
+import ProjectStack from './ProjectStack';
 
 const ProjectSection = () => {
   return (
@@ -21,12 +23,17 @@ const ProjectSection = () => {
           <div className='min-w-0 lg:flex-[2]'>
             <div className='relative aspect-[16/9] overflow-hidden'>
               {/* Background gradient placeholder */}
-              <div className='absolute inset-0 bg-[linear-gradient(20deg,#c08b89,#a77776_45%,#c08b89)]' />
-
-              {/* When ready: drop screens as layers */}
-              {/* <Image src="/projects/goviral/home.png" alt="GoViral UI" fill className="object-contain translate-y-[-2%]" /> */}
-              {/* <Image src="/projects/goviral/editor.png" alt="Editor" width={720} height={480}
-          className="absolute right-4 bottom-4 shadow-[0_10px_40px_rgba(0,0,0,0.18)]" /> */}
+              {/* Warm editorial gradient */}
+              <div className='absolute inset-0 bg-[linear-gradient(22deg,#faf7f4,#e9e6e2_50%,#faf7f4)]' />
+              <div className='absolute inset-0 pointer-events-none [box-shadow:inset_0_0_160px_rgba(0,0,0,0.08)]' />
+              <ProjectStack
+                images={[
+                  '/images/projects/goviral-1.svg',
+                  '/images/projects/goviral-2.svg',
+                  '/images/projects/goviral-3.svg',
+                  '/images/projects/goviral-4.svg',
+                ]}
+              />
             </div>
           </div>
 
@@ -44,8 +51,9 @@ const ProjectSection = () => {
                 manage viral short-form videos across platforms.
               </p>
               <p>
-                With a responsive, accessible interface and smooth performance,
-                it simplifies the creative process so ideas can spread faster.
+                With a responsive interface, it automates transcription, script
+                rewriting, and AI voiceovers, simplifying the creative pipeline
+                end-to-end.
               </p>
             </div>
 
@@ -80,9 +88,17 @@ const ProjectSection = () => {
           <div className='min-w-0 lg:flex-[2]'>
             <div className='relative aspect-[16/9] overflow-hidden'>
               {/* Gunmetal studio with subtle depth + red hint for brand continuity */}
-              <div className='absolute inset-0 bg-[linear-gradient(22deg,#111217,#2a2f37_52%,#111217)]' />
-              <div className='absolute inset-0 opacity-[0.12] bg-[radial-gradient(1200px_600px_at_75%_70%,#F61111_0%,transparent_70%)]' />
-              {/* layer future UI screens here */}
+              <div className='absolute inset-0 bg-[linear-gradient(22deg,#f5f6f7,#e2e4e8_52%,#f5f6f7)]' />
+              <div className='absolute inset-0 pointer-events-none [box-shadow:inset_0_0_160px_rgba(0,0,0,0.08)]' />
+
+              <ProjectStack
+                images={[
+                  '/images/projects/gapdle-1.svg',
+                  '/images/projects/gapdle-2.svg',
+                  '/images/projects/gapdle-3.svg',
+                  '/images/projects/gapdle-4.svg',
+                ]}
+              />
             </div>
           </div>
         </article>
@@ -92,11 +108,21 @@ const ProjectSection = () => {
           {/* Image / gallery entry */}
           <div className='min-w-0 lg:flex-[2]'>
             <div className='relative aspect-[16/9] overflow-hidden'>
-              {/* Cool studio grey/blue — crisp, data-driven aesthetic */}
-              <div className='absolute inset-0 bg-[linear-gradient(24deg,#e9edf5,#d6dbe6_52%,#eef1f6)]' />
+              {/* Night match editorial background */}
+              <div className='absolute inset-0 bg-[linear-gradient(22deg,#0f1116,#1a1d24_55%,#0f1116)]' />
+              {/* spotlight glow — cool white/blue */}
+              <div className='absolute inset-0 opacity-[0.14] bg-[radial-gradient(900px_500px_at_60%_70%,#4fa3ff_0%,transparent_75%)]' />
               {/* faint vignette to frame content */}
-              <div className='absolute inset-0 pointer-events-none [box-shadow:inset_0_0_120px_rgba(0,0,0,0.08)]' />
-              {/* layer future UI screens here */}
+              <div className='absolute inset-0 pointer-events-none [box-shadow:inset_0_0_160px_rgba(0,0,0,0.6)]' />
+
+              <ProjectStack
+                variant='dark'
+                images={[
+                  '/images/projects/fpl-1.svg',
+                  '/images/projects/fpl-2.svg',
+                  '/images/projects/fpl-3.svg',
+                ]}
+              />
             </div>
           </div>
 
