@@ -117,7 +117,10 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section className='flex flex-col mt-16 items-center'>
+    <section
+      id='experience'
+      className='scroll-mt-24 flex flex-col mt-16 items-center'
+    >
       {/* Heading */}
       <div className='px-4 pb-2 bg-[#F61111] w-fit'>
         <h1 className='text-white text-7xl font-futura'>Experience</h1>

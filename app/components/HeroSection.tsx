@@ -7,7 +7,7 @@ import ArrowDown from '@/public/Icons/ArrowDown.svg';
 
 const HeroSection = () => {
   return (
-    <div className='flex flex-col gap-20'>
+    <div id='home' className='scroll-mt-24 flex flex-col mt-24 gap-20'>
       <div className='flex flex-row items-start'>
         {/* Left: Gradient Text */}
         <div className='flex-1 pt-48'>

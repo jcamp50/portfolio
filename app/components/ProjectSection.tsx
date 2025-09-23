@@ -5,7 +5,10 @@ import ProjectStack from './ProjectStack';
 
 const ProjectSection = () => {
   return (
-    <section className='flex mt-16 flex-col items-center'>
+    <section
+      id='projects'
+      className='scroll-mt-24 flex mt-16 flex-col items-center'
+    >
       {/* Section label — keep the red tab style */}
 
       <div className='px-4 pb-2 bg-[#F61111] w-fit'>
@@ -132,7 +135,7 @@ const ProjectSection = () => {
               FPL Predictor
             </h2>
             <p className='mt-1 text-xs font-gestura tracking-[0.18em] uppercase text-black/60'>
-              TypeScript, Python, FastAPI, Postgres, Scraping, ML
+              TypeScript, Python, FastAPI, Postgresql, Scraping, ML
             </p>
             <div className='mt-60 font-gestura text-2xl leading-relaxed text-black/80 space-y-6'>
               <p>

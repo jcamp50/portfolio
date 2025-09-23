@@ -8,7 +8,10 @@ const BadgeCard = dynamic(() => import('./BadgeCard'), {
 
 const ContactSection = () => {
   return (
-    <section className='flex mt-16 flex-col items-center'>
+    <section
+      id='contact'
+      className='scroll-mt-24 flex mt-16 flex-col items-center'
+    >
       {/* Section label — keep the red tab style */}
 
       <BadgeCard />
