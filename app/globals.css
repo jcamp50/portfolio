@@ -139,14 +139,12 @@ ul[data-scroll-phrase] {
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(var(--move-distance, -50%));
   }
-
-  /* because we doubled the tape */
 }
 
 .tech-marquee {
-  animation: tech-marquee-move var(--speed, 40s) linear infinite;
+  animation: tech-marquee-move var(--speed) linear infinite;
 }
 
 /* respect reduced motion */

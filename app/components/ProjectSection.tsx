@@ -74,7 +74,7 @@ const ProjectSection = () => {
             </p>
             <div className='mt-60 font-gestura text-2xl leading-relaxed text-black/80 space-y-6'>
               <p>
-                Gapdle is a daily head-to-head car race game—guess the winner,
+                Gapdle is a daily head-to-head car race game. Guess the winner,
                 watch the clip, compare your pick to the crowd.
               </p>
               <p>
@@ -136,12 +136,13 @@ const ProjectSection = () => {
             </p>
             <div className='mt-60 font-gestura text-2xl leading-relaxed text-black/80 space-y-6'>
               <p>
-                FPL Predictor blends form, fixtures, and historical trends to
-                surface smart captaincy and lineup calls—fast.
+                Fantasy Premier League Predictor blends form, fixtures, and
+                historical data trends to surface smart captaincy and lineup
+                calls, fast.
               </p>
               <p>
                 The interface stays minimal and direct; the modeling does the
-                heavy lifting so you can act with confidence.
+                heavy lifting so insights show before rivals can react.
               </p>
             </div>
           </div>

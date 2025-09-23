@@ -34,10 +34,14 @@ interface Props {
 
 const StackBar = ({
   items = DEFAUTLST_TECHS,
-  speedSec = 40,
+  speedSec = 120,
   grayscale = true,
 }) => {
-  const tape = [...items, ...items];
+
+const tape = [...items, ...items, ...items, ...items];
+
+const itemWidth = 220; // min-w-[180px] + gap
+const moveDistance = items.length * itemWidth;
 
   return (
     <section aria-label='Languages, Frameworks, and Tools' className='w-full'>
@@ -64,7 +68,10 @@ const StackBar = ({
           {/* moving track */}
           <div
             className='tech-marquee flex gap-10 will-change-transform'
-            style={{ ['--speed' as any]: `${speedSec}s` }}
+            style={{
+              ['--speed' as any]: `${speedSec}s`,
+              ['--move-distance' as any]: `-${moveDistance}px`,
+            }}
             aria-hidden='true'
           >
             {tape.map((t, i) => (
