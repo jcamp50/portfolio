@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { log } from 'console';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface ExperienceCardProps {
   logo: string;
@@ -100,13 +101,13 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           <span
             aria-hidden='true'
             className='pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
-             z-[18] w-[8px] h-[20px] bg-white'
+            z-[18] w-[8px] h-[20px] bg-white'
           />
 
           <span
             aria-hidden='true'
             className='pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
-             z-[19] w-[4px] h-[8px]'
+            z-[19] w-[4px] h-[8px]'
             style={{
               backgroundImage:
                 'linear-gradient(to bottom, #F61111 0%, #F61111 85%, white 100%)',
@@ -118,7 +119,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           <span
             aria-hidden='true'
             className='pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
-             z-[20] w-4 h-4 shadow-[0_0_0_2px_#fff]'
+            z-[20] w-4 h-4 shadow-[0_0_0_2px_#fff]'
             style={{
               backgroundImage:
                 'linear-gradient(to bottom, #F61111 0%, #F61111 85%, white 100%)',
@@ -145,6 +146,28 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
             isEdu ? 'w-full max-w-[900px] px-12 py-6' : ' p-6 min-w-full'
           } `}
         >
+          {/* GOLDEN 45° SHIMMER ACROSS WHOLE EDUCATION CARD */}
+          {isEdu && open && (
+            <div
+              aria-hidden
+              className='pointer-events-none absolute inset-0 overflow-hidden z-[8]'
+            >
+              <motion.div
+                initial={{ x: '-150%', y: '-150%', rotate: 45 }}
+                animate={{ x: '150%', y: '150%', rotate: 45 }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                  duration: 5,
+                  ease: 'linear',
+                }}
+                className='absolute top-1/2 -translate-y-1/2 -left-1/2 w-[250%] h-[15%] rotate-45
+                bg-gradient-to-r from-transparent via-white/10 to-transparent
+                mix-blend-overlay' /* brighter than overlay; swap to overlay/soft-light to taste */
+                style={{ willChange: 'transform' }}
+              />
+            </div>
+          )}
           {/* Corner brackets */}
           <span
             className={`absolute -top-2 -left-2 w-6 h-6 border-t-8 border-l-8 group-hover:border-black ${
@@ -183,8 +206,8 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
               <div
                 aria-hidden
                 className='pointer-events-none absolute inset-0 z-10
-               bg-[linear-gradient(135deg,rgba(255,255,255,0.6)_0%,transparent_40%)]
-               mix-blend-overlay opacity-20'
+                          bg-[linear-gradient(135deg,rgba(255,255,255,0.6)_0%,transparent_40%)]
+                          mix-blend-overlay opacity-20'
               />
             </>
           )}

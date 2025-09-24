@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
+import { useScroll, useTransform, motion } from 'framer-motion';
 import ExperienceCard from './ExperienceCard';
-
 
 const ExperienceSection = () => {
   const items = [
@@ -115,6 +115,7 @@ const ExperienceSection = () => {
       },
     },
   ];
+  
 
   return (
     <section
@@ -139,41 +140,60 @@ const ExperienceSection = () => {
 
         {/* Cards */}
         <div className='relative z-20 flex flex-col gap-28'>
-          {items.map((it, i) => (
-            <ExperienceCard
-              key={it.company + i}
-              logo={it.logo}
-              company={it.company}
-              role={it.role}
-              dates={it.dates}
-              align={it.align}
-              progress={items.length === 1 ? 0 : i / (items.length - 1)}
-              details={it.details}
-            />
-          ))}
+          {items.map((it, i) => {
+            const fromX = it.align === 'left' ? -24 : 24;
+
+            return (
+              <motion.div
+                key={it.company + i}
+                initial={{ opacity: 0, y: 16, x: fromX }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.06 }}
+                viewport={{ once: true, amount: 0.25 }}
+              >
+                <ExperienceCard
+                  logo={it.logo}
+                  company={it.company}
+                  role={it.role}
+                  dates={it.dates}
+                  align={it.align}
+                  progress={items.length === 1 ? 0 : i / (items.length - 1)}
+                  details={it.details}
+                />
+              </motion.div>
+            );
+          })}
 
           {/* Education at the bottom, centered */}
-          <ExperienceCard
-            variant='education'
-            logo='/logos/UCF_tab.svg'
-            school='University of Central Florida'
-            degree='B.S. Computer Science'
-            gpa='3.5'
-            dates='Aug 2022 – May 2026'
-            progress={1}
-            // courses will be the details in the expanded section later
-            courses={[
-              'Artificial Intelligence',
-              'Robot Vision',
-              'Database Systems',
-              'Mobile Device Software Development',
-              'Software Engineering',
-              'Object-Oriented Programming',
-              'Computer Logic & Organization',
-              'Discrete Structures I & II',
-              'Matrix & Linear Algebra',
-            ]}
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }} // ← fixed delay, not i * 0.06
+            viewport={{ once: true, amount: 0.25 }}
+          >
+            {' '}
+            <ExperienceCard
+              variant='education'
+              logo='/logos/UCF_tab.svg'
+              school='University of Central Florida'
+              degree='B.S. Computer Science'
+              gpa='3.5'
+              dates='Aug 2022 – May 2026'
+              progress={1}
+              // courses will be the details in the expanded section later
+              courses={[
+                'Artificial Intelligence',
+                'Robot Vision',
+                'Database Systems',
+                'Mobile Device Software Development',
+                'Software Engineering',
+                'Object-Oriented Programming',
+                'Computer Logic & Organization',
+                'Discrete Structures I & II',
+                'Matrix & Linear Algebra',
+              ]}
+            />
+          </motion.div>
         </div>
       </div>
     </section>

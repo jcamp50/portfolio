@@ -10,8 +10,8 @@ import ContactSection from './components/ContactSection';
 export default function Home() {
   return (
     <main
-      className='min-h-screen bg-[#ffffff] [background-image:radial-gradient(circle,rgba(0,0,0,0.04)_2px,transparent_1px)]
-                [background-size:20px_20px]'
+      className='min-h-screen bg-[#ffffff] [background-image:radial-gradient(circle,rgba(0,0,0,0.03)_2px,transparent_1px)]
+                [background-size:30px_30px]'
     >
       <Navbar />
       <div className='w-full flex flex-col gap-20 px-12'>

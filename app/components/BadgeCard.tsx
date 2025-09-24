@@ -309,7 +309,7 @@ export default function BadgeCard() {
                       Contact
                     </p>
                     <h4 className='mt-1 text-sm font-medium'>
-                      Let's build something worth shipping.
+                      Let&apos;s build something worth shipping.
                     </h4>
                   </div>
 
