@@ -6,35 +6,35 @@ type Tech = { src: string; alt: string; label?: string };
 
 const DEFAUTLST_TECHS: Tech[] = [
   // Core Languages
-  { src: '/logos/TS.svg', alt: 'TypeScript' },
-  { src: '/logos/JS.svg', alt: 'JavaScript' },
-  { src: '/logos/Python.svg', alt: 'Python' },
-  { src: '/logos/Java.svg', alt: 'Java' },
-  { src: '/logos/C++.svg', alt: 'C++' },
+  { src: '/images/logos/TS.svg', alt: 'TypeScript' },
+  { src: '/images/logos/JS.svg', alt: 'JavaScript' },
+  { src: '/images/logos/Python.svg', alt: 'Python' },
+  { src: '/images/logos/Java.svg', alt: 'Java' },
+  { src: '/images/logos/C++.svg', alt: 'C++' },
 
   // Frameworks & Libraries
-  { src: '/logos/React.svg', alt: 'React' },
-  { src: '/logos/Angular.svg', alt: 'Angular' },
-  { src: '/logos/Next.svg', alt: 'Next.js' },
-  { src: '/logos/SpringBoot.svg', alt: 'Spring Boot' },
-  { src: '/logos/Express.svg', alt: 'Express.js' },
+  { src: '/images/logos/React.svg', alt: 'React' },
+  { src: '/images/logos/Angular.svg', alt: 'Angular' },
+  { src: '/images/logos/Next.svg', alt: 'Next.js' },
+  { src: '/images/logos/SpringBoot.svg', alt: 'Spring Boot' },
+  { src: '/images/logos/Express.svg', alt: 'Express.js' },
 
   // Styling & Animation
-  { src: '/logos/Tailwind.svg', alt: 'Tailwind CSS' },
-  { src: '/logos/Figma.svg', alt: 'Figma' },
+  { src: '/images/logos/Tailwind.svg', alt: 'Tailwind CSS' },
+  { src: '/images/logos/Figma.svg', alt: 'Figma' },
 
   // Backend / Infra
-  { src: '/logos/Node.svg', alt: 'Node.js' },
-  { src: '/logos/Postgres.svg', alt: 'PostgreSQL' },
-  { src: '/logos/AWS.svg', alt: 'AWS' },
+  { src: '/images/logos/Node.svg', alt: 'Node.js' },
+  { src: '/images/logos/Postgres.svg', alt: 'PostgreSQL' },
+  { src: '/images/logos/AWS.svg', alt: 'AWS' },
 
   // Tooling / Testing
-  { src: '/logos/Jest.svg', alt: 'Jest' },
-  { src: '/logos/Nx.svg', alt: 'Nx' },
-  { src: '/logos/Git.svg', alt: 'Git' },
-  { src: '/logos/Jenkins.svg', alt: 'Jenkins' },
-  { src: '/logos/Docker.svg', alt: 'Docker' },
-  { src: '/logos/Jira.svg', alt: 'Jira' },
+  { src: '/images/logos/Jest.svg', alt: 'Jest' },
+  { src: '/images/logos/Nx.svg', alt: 'Nx' },
+  { src: '/images/logos/Git.svg', alt: 'Git' },
+  { src: '/images/logos/Jenkins.svg', alt: 'Jenkins' },
+  { src: '/images/logos/Docker.svg', alt: 'Docker' },
+  { src: '/images/logos/Jira.svg', alt: 'Jira' },
 ];
 interface Props {
   items?: Tech[];
