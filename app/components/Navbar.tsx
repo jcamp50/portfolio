@@ -75,6 +75,24 @@ export default function Navbar() {
     return () => window.removeEventListener('hashchange', setFromHash);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    document.body.style.touchAction = open ? 'none' : '';
+    return () => {
+      document.documentElement.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
+
   // shared link styles (Gestura caps, tighter tracking, thin underline on hover)
   const linkBase =
     'relative px-2 py-1 text-sm tracking-tight uppercase font-normal ' +
@@ -88,24 +106,24 @@ export default function Navbar() {
   return (
     <header
       className={[
-        'fixed inset-x-0 top-0 z-50',
+        'fixed inset-x-0 top-0 z-50 pt-[max(env(safe-area-inset-top),0px)]',
         'transition-all duration-200',
         scrolled ? 'bg-white border-b border-black/5' : 'bg-white',
       ].join(' ')}
       role='banner'
     >
       <nav
-        className='mx-auto max-w-[120rem] px-5 sm:px-12'
+        className='mx-auto max-w-[120rem] px-5 sm:px-6 md:px-12'
         aria-label='Primary'
       >
         {/* Flex row: left logo • center nav • right cta */}
-        <div className='flex flex-row items-center h-16 w-full'>
+        <div className='flex flex-row items-center h-14 md:h-16 w-full'>
           {/* Left: Logo */}
           <div className='flex flex-1 justify-start'>
             <Link
               href='#home'
               onClick={() => setActiveId('home')}
-              className='inline-flex items-center gap-2'
+              className='inline-flex items-center gap-2 p-2 -m-2 min-h-10'
               aria-label='Jordan Campbell — Home'
             >
               <Image
@@ -187,47 +205,49 @@ export default function Navbar() {
               aria-label='Toggle menu'
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className='group inline-flex h-8 w-8 items-center justify-center rounded-md border border-black/10'
+              className='group inline-flex h-10 w-10 items-center justify-center border border-black/10'
             >
-              <span className='sr-only'>Menu</span>
-              <div className='h-[1px] w-4 bg-black transition-all group-aria-expanded:rotate-45' />
-              <div className='h-[1px] w-4 bg-black mt-[5px] transition-all group-aria-expanded:opacity-0' />
-              <div className='h-[1px] w-4 bg-black mt-[5px] transition-all group-aria-expanded:-rotate-45' />
+              <div className='relative h-3.5 w-5'>
+                <span className='absolute inset-x-0 top-0 h-[2px] bg-black origin-center transition-all group-aria-expanded:translate-y-[6px] group-aria-expanded:rotate-45' />
+                <span className='absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-black origin-center transition-all group-aria-expanded:opacity-0' />
+                <span className='absolute inset-x-0 bottom-0 h-[2px] bg-black origin-center transition-all group-aria-expanded:-translate-y-[6px] group-aria-expanded:-rotate-45' />
+              </div>
             </button>
           </div>
         </div>
 
         {/* Mobile drawer */}
+        {/* Mobile drawer */}
         {open && (
-          <div className='md:hidden pb-4'>
-            <ul className='flex flex-col items-center gap-3 pt-2'>
-              {NAV_LINKS.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className={[
-                      'block px-3 py-2 text-base uppercase tracking-tight',
-                      'text-black/80 hover:text-black',
-                      'relative after:absolute after:left-0 after:-bottom-[2px] after:h-px after:w-0 after:bg-black hover:after:w-full after:transition-all after:duration-200',
-                      'font-gestura',
-                    ].join(' ')}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link
-                  href='/resume.pdf'
-                  onClick={() => setOpen(false)}
-                  className='text-base underline underline-offset-4'
-                >
-                  Resume
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <>
+            {/* backdrop: tap anywhere outside to close */}
+            <button
+              aria-label='Close menu'
+              onClick={() => setOpen(false)}
+              className='md:hidden fixed inset-0 z-0 '
+            />
+            {/* drawer content stays how you had it */}
+            <div className='md:hidden relative z-10 pb-4'>
+              <ul className='flex flex-col items-center gap-3 pt-2'>
+                {NAV_LINKS.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className={[
+                        'block px-3 py-2 text-base uppercase tracking-tight',
+                        'text-black/80 hover:text-black',
+                        'relative after:absolute after:left-0 after:-bottom-[2px] after:h-px after:w-0 after:bg-black hover:after:w-full after:transition-all after:duration-200',
+                        'font-gestura',
+                      ].join(' ')}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </>
         )}
       </nav>
     </header>
