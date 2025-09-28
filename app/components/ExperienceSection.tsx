@@ -7,7 +7,7 @@ import ExperienceCard from './ExperienceCard';
 const ExperienceSection = () => {
   const items = [
     {
-      logo: '/logos/Fidelity.svg',
+      logo: '/images/logos/Fidelity.svg',
       company: 'Fidelity Investments',
       role: 'Software Eng. Intern',
       dates: 'Jun - Aug 2025',
@@ -29,7 +29,7 @@ const ExperienceSection = () => {
       },
     },
     {
-      logo: '/logos/Lockheed.svg',
+      logo: '/images/logos/Lockheed.svg',
       company: 'Lockheed Martin',
       role: 'Systems Eng. Intern',
       dates: 'Jul - Dec 2024',
@@ -51,7 +51,7 @@ const ExperienceSection = () => {
       },
     },
     {
-      logo: '/logos/Netflix.svg',
+      logo: '/images/logos/Netflix.svg',
       company: 'Netflix + Formation',
       role: 'Software Eng. Fellow',
       dates: 'May - Dec 2024',
@@ -74,7 +74,7 @@ const ExperienceSection = () => {
       },
     },
     {
-      logo: '/logos/Kairos.svg',
+      logo: '/images/logos/Kairos.svg',
       company: 'Kairos, Inc',
       role: 'Additive Manufacturing Intern',
       dates: 'May - Aug 2023',
@@ -95,7 +95,7 @@ const ExperienceSection = () => {
       },
     },
     {
-      logo: '/logos/Kairos.svg',
+      logo: '/images/logos/Kairos.svg',
       company: 'Kairos, Inc',
       role: 'IT Intern',
       dates: 'Jun - Sep 2022',
