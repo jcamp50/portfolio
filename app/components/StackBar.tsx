@@ -1,40 +1,61 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import tsImg from '/images/logos/TS.svg';
+import jsImg from '/images/logos/JS.svg';
+import pythonImg from '/images/logos/Python.svg';
+import javaImg from '/images/logos/Java.svg';
+import cppImg from '/images/logos/C++.svg';
+import reactImg from '/images/logos/React.svg';
+import angularImg from '/images/logos/Angular.svg';
+import nextImg from '/images/logos/Next.svg';
+import springBootImg from '/images/logos/SpringBoot.svg';
+import expressImg from '/images/logos/Express.svg';
+import tailwindImg from '/images/logos/Tailwind.svg';
+import figmaImg from '/images/logos/Figma.svg';
+import nodeImg from '/images/logos/Node.svg';
+import postgresImg from '/images/logos/Postgres.svg';
+import awsImg from '/images/logos/AWS.svg';
+import jestImg from '/images/logos/Jest.svg';
+import nxImg from '/images/logos/Nx.svg';
+import gitImg from '/images/logos/Git.svg';
+import jenkinsImg from '/images/logos/Jenkins.svg';
+import dockerImg from '/images/logos/Docker.svg';
+import jiraImg from '/images/logos/Jira.svg';
 
 type Tech = { src: string; alt: string; label?: string };
 
 const DEFAUTLST_TECHS: Tech[] = [
   // Core Languages
-  { src: '/images/logos/TS.svg', alt: 'TypeScript' },
-  { src: '/images/logos/JS.svg', alt: 'JavaScript' },
-  { src: '/images/logos/Python.svg', alt: 'Python' },
-  { src: '/images/logos/Java.svg', alt: 'Java' },
-  { src: '/images/logos/C++.svg', alt: 'C++' },
+  { src: tsImg, alt: 'TypeScript' },
+  { src: jsImg, alt: 'JavaScript' },
+  { src: pythonImg, alt: 'Python' },
+  { src: javaImg, alt: 'Java' },
+  { src: cppImg, alt: 'C++' },
 
   // Frameworks & Libraries
-  { src: '/images/logos/React.svg', alt: 'React' },
-  { src: '/images/logos/Angular.svg', alt: 'Angular' },
-  { src: '/images/logos/Next.svg', alt: 'Next.js' },
-  { src: '/images/logos/SpringBoot.svg', alt: 'Spring Boot' },
-  { src: '/images/logos/Express.svg', alt: 'Express.js' },
+  { src: reactImg, alt: 'React' },
+  { src: angularImg, alt: 'Angular' },
+  { src: nextImg, alt: 'Next.js' },
+  { src: springBootImg, alt: 'Spring Boot' },
+  { src: expressImg, alt: 'Express.js' },
 
   // Styling & Animation
-  { src: '/images/logos/Tailwind.svg', alt: 'Tailwind CSS' },
-  { src: '/images/logos/Figma.svg', alt: 'Figma' },
+  { src: tailwindImg, alt: 'Tailwind CSS' },
+  { src: figmaImg, alt: 'Figma' },
 
   // Backend / Infra
-  { src: '/images/logos/Node.svg', alt: 'Node.js' },
-  { src: '/images/logos/Postgres.svg', alt: 'PostgreSQL' },
-  { src: '/images/logos/AWS.svg', alt: 'AWS' },
+  { src: nodeImg, alt: 'Node.js' },
+  { src: postgresImg, alt: 'PostgreSQL' },
+  { src: awsImg, alt: 'AWS' },
 
   // Tooling / Testing /
-  { src: '/images/logos/Jest.svg', alt: 'Jest' },
-  { src: '/images/logos/Nx.svg', alt: 'Nx' },
-  { src: '/images/logos/Git.svg', alt: 'Git' },
-  { src: '/images/logos/Jenkins.svg', alt: 'Jenkins' },
-  { src: '/images/logos/Docker.svg', alt: 'Docker' },
-  { src: '/images/logos/Jira.svg', alt: 'Jira' },
+  { src: jestImg, alt: 'Jest' },
+  { src: nxImg, alt: 'Nx' },
+  { src: gitImg, alt: 'Git' },
+  { src: jenkinsImg, alt: 'Jenkins' },
+  { src: dockerImg, alt: 'Docker' },
+  { src: jiraImg, alt: 'Jira' },
 ];
 interface Props {
   items?: Tech[];

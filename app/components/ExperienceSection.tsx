@@ -3,11 +3,16 @@
 import React from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import ExperienceCard from './ExperienceCard';
+import FidelityLogo from '/images/logos/Fidelity.svg';
+import LockheedLogo from '/images/logos/Lockheed.svg';
+import NetflixLogo from '/images/logos/Netflix.svg';
+import KairosLogo from '/images/logos/Kairos.svg';
+import UCFLogo from '/images/logos/UCF_tab.svg';
 
 const ExperienceSection = () => {
   const items = [
     {
-      logo: '/images/logos/Fidelity.svg',
+      logo: FidelityLogo,
       company: 'Fidelity Investments',
       role: 'Software Eng. Intern',
       dates: 'Jun - Aug 2025',
@@ -29,7 +34,7 @@ const ExperienceSection = () => {
       },
     },
     {
-      logo: '/images/logos/Lockheed.svg',
+      logo: LockheedLogo,
       company: 'Lockheed Martin',
       role: 'Systems Eng. Intern',
       dates: 'Jul - Dec 2024',
@@ -51,7 +56,7 @@ const ExperienceSection = () => {
       },
     },
     {
-      logo: '/images/logos/Netflix.svg',
+      logo: NetflixLogo,
       company: 'Netflix + Formation',
       role: 'Software Eng. Fellow',
       dates: 'May - Dec 2024',
@@ -74,7 +79,7 @@ const ExperienceSection = () => {
       },
     },
     {
-      logo: '/images/logos/Kairos.svg',
+      logo: KairosLogo,
       company: 'Kairos, Inc',
       role: 'Additive Manufacturing Intern',
       dates: 'May - Aug 2023',
@@ -95,7 +100,7 @@ const ExperienceSection = () => {
       },
     },
     {
-      logo: '/images/logos/Kairos.svg',
+      logo: KairosLogo,
       company: 'Kairos, Inc',
       role: 'IT Intern',
       dates: 'Jun - Sep 2022',
@@ -173,7 +178,7 @@ const ExperienceSection = () => {
             {' '}
             <ExperienceCard
               variant='education'
-              logo='/logos/UCF_tab.svg'
+              logo={UCFLogo}
               school='University of Central Florida'
               degree='B.S. Computer Science'
               gpa='3.5'
