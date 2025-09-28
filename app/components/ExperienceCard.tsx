@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { log } from 'console';
 import { AnimatePresence, motion } from 'framer-motion';
-import UCF_SEAL from '/images/logos/UCF_seal.svg';
+import UCF_SEAL from '@/public/images/logos/UCF_seal.svg';
 
 interface ExperienceCardProps {
   logo: string;

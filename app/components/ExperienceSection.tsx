@@ -3,11 +3,11 @@
 import React from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import ExperienceCard from './ExperienceCard';
-import FidelityLogo from '/images/logos/Fidelity.svg';
-import LockheedLogo from '/images/logos/Lockheed.svg';
-import NetflixLogo from '/images/logos/Netflix.svg';
-import KairosLogo from '/images/logos/Kairos.svg';
-import UCFLogo from '/images/logos/UCF_tab.svg';
+import FidelityLogo from '@/public/images/logos/Fidelity.svg';
+import LockheedLogo from '@/public/images/logos/Lockheed.svg';
+import NetflixLogo from '@/public/images/logos/Netflix.svg';
+import KairosLogo from '@/public/images/logos/Kairos.svg';
+import UCFLogo from '@/public/images/logos/UCF_tab.svg';
 //
 const ExperienceSection = () => {
   const items = [
