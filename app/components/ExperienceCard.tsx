@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { log } from 'console';
 import { AnimatePresence, motion } from 'framer-motion';
+import UCF_SEAL from '/images/logos/UCF_seal.svg';
 
 interface ExperienceCardProps {
   logo: string;
@@ -191,18 +192,18 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           />
           {isEdu && (
             <>
-              {/* Watermark seal (only when expanded) */}
               {open && (
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute z-0 left-1/2 -translate-x-1/2
-                bottom-8 w-[300px] h-[300px]
-                bg-[url('/logos/UCF_seal.svg')] bg-no-repeat bg-contain
-                opacity-30"
+                  className='pointer-events-none absolute z-0 left-1/2 -translate-x-1/2 bottom-8 w-[300px] h-[300px] opacity-30'
+                  style={{
+                    backgroundImage: `url(${UCF_SEAL.src})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain',
+                    backgroundPosition: 'center',
+                  }}
                 />
               )}
-
-              {/* Diagonal sheen / foil */}
               <div
                 aria-hidden
                 className='pointer-events-none absolute inset-0 z-10
