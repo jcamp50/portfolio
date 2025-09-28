@@ -39,8 +39,8 @@ const HeroSection = () => {
         <div className='order-1 md:order-2 flex-1 w-full flex justify-center md:justify-end'>
           <div
             className='w-[85vw] sm:w-[90vw] md:w-[680px] md:h-[640px] lg:w-[800px] lg:h-[770px]
-             aspect-[4/3] md:aspect-auto
-             p-4 sm:p-6 md:p-8 lg:p-10 flex items-center justify-center mx-auto'
+                        aspect-[4/3] md:aspect-auto
+                        p-4 sm:p-6 md:p-8 lg:p-10 flex items-center justify-center'
             style={{
               background:
                 'linear-gradient(25deg, #F61111 10%, #D28484 40%, #D96D6D 65%, #F61111 100%)',
