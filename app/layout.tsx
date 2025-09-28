@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { futuraHeavyOblique, gestura } from './fonts';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -26,7 +27,10 @@ export default function RootLayout({
         />
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

@@ -423,7 +423,6 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
                                   src={headshot}
                                   alt='Jordan Campbell headshot'
                                   fill
-                                  sizes='128px'
                                   className='object-cover'
                                 />
                               </div>
