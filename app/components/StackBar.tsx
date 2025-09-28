@@ -28,7 +28,7 @@ const DEFAUTLST_TECHS: Tech[] = [
   { src: '/images/logos/Postgres.svg', alt: 'PostgreSQL' },
   { src: '/images/logos/AWS.svg', alt: 'AWS' },
 
-  // Tooling / Testing
+  // Tooling / Testing /
   { src: '/images/logos/Jest.svg', alt: 'Jest' },
   { src: '/images/logos/Nx.svg', alt: 'Nx' },
   { src: '/images/logos/Git.svg', alt: 'Git' },
