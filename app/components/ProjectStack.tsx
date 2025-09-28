@@ -140,6 +140,7 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
                     draggable={false}
                     className='mx-auto object-contain rounded-md shadow-[0_12px_36px_rgba(0,0,0,.38)] select-none'
                     priority={imgIndex === idx}
+                    unoptimized
                   />
                 </motion.div>
               ) : (
@@ -152,6 +153,7 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
                     draggable={false}
                     className='mx-auto object-contain rounded-md shadow-[0_12px_36px_rgba(0,0,0,.38)] select-none'
                     priority={imgIndex === idx}
+                    unoptimized
                   />
                 </div>
               )}

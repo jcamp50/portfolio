@@ -424,6 +424,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
                                   alt='Jordan Campbell headshot'
                                   fill
                                   className='object-cover'
+                                  unoptimized
                                 />
                               </div>
 
@@ -555,6 +556,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
                                 height={200}
                                 className='rounded-md shadow-md'
                                 draggable={false}
+                                unoptimized
                               />
                             </div>
 

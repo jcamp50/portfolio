@@ -228,6 +228,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                 height={logoSize}
                 className='absolute top-0 left-0 object-contain -translate-y-6'
                 priority={false}
+                unoptimized
               />
             ) : (
               // Experience: keep inline in the row
@@ -239,6 +240,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                   height={logoSize}
                   className='object-contain'
                   priority={false}
+                  unoptimized
                 />
               </div>
             )}
@@ -345,6 +347,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                         height={32}
                         className='opacity-60 object-contain'
                         priority={false}
+                        unoptimized
                       />
                     </div>
                   )}

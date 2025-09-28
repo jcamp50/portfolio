@@ -31,6 +31,7 @@ const HeroSection = () => {
                 src={ArrowDown}
                 alt='Scroll down'
                 className='inline-block arrow-reveal w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12'
+                unoptimized
               />
             </div>
           </div>
@@ -55,6 +56,7 @@ const HeroSection = () => {
               width={650} // your original desktop visual; keeps lg look unchanged
               height={650}
               sizes='(min-width: 1024px) 650px, (min-width: 768px) 520px, 72vw'
+              unoptimized
             />
           </div>
         </div>

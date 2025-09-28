@@ -93,7 +93,10 @@ const StackBar = ({
                   alt={t.alt}
                   width={80}
                   height={80}
-                  className={`object-contain self-center ${grayscale ? 'grayscale' : ''}`}
+                  className={`object-contain self-center ${
+                    grayscale ? 'grayscale' : ''
+                  }`}
+                  unoptimized
                 />
                 <span className='font-gestura text-[0.60rem] tracking-[0.18em] uppercase text-black/70'>
                   {t.label ?? t.alt}
