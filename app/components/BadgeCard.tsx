@@ -18,7 +18,7 @@ import type { MotionValue } from 'framer-motion';
 
 // Replace with your assets
 import headshot from '@/public/images/headshot.svg'; // temp image
-// import qr from '@/public/qr-contact.png';
+// import qr from '@/public/qr-contact.png' ;
 
 type LinkItem = { label: string; href: string; newTab?: boolean };
 type BadgeCardProps = { introPlay?: boolean };
