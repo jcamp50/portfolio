@@ -5,27 +5,37 @@ import Image from 'next/image';
 type Tech = { src: string; alt: string; label?: string };
 
 const DEFAUTLST_TECHS: Tech[] = [
+  // Core Languages
   { src: '/logos/TS.svg', alt: 'TypeScript' },
+  { src: '/logos/JS.svg', alt: 'JavaScript' },
   { src: '/logos/Python.svg', alt: 'Python' },
+  { src: '/logos/Java.svg', alt: 'Java' },
+  { src: '/logos/C++.svg', alt: 'C++' },
+
+  // Frameworks & Libraries
   { src: '/logos/React.svg', alt: 'React' },
-  { src: '/logos/Postgres.svg', alt: 'PostgreSQL' },
   { src: '/logos/Angular.svg', alt: 'Angular' },
+  { src: '/logos/Next.svg', alt: 'Next.js' },
+  { src: '/logos/SpringBoot.svg', alt: 'Spring Boot' },
+  { src: '/logos/Express.svg', alt: 'Express.js' },
+
+  // Styling & Animation
+  { src: '/logos/Tailwind.svg', alt: 'Tailwind CSS' },
+  { src: '/logos/Figma.svg', alt: 'Figma' },
+
+  // Backend / Infra
+  { src: '/logos/Node.svg', alt: 'Node.js' },
+  { src: '/logos/Postgres.svg', alt: 'PostgreSQL' },
+  { src: '/logos/AWS.svg', alt: 'AWS' },
+
+  // Tooling / Testing
   { src: '/logos/Jest.svg', alt: 'Jest' },
   { src: '/logos/Nx.svg', alt: 'Nx' },
-  { src: '/logos/Java.svg', alt: 'Java' },
-  { src: '/logos/AWS.svg', alt: 'AWS' },
-  { src: '/logos/html.svg', alt: 'html' },
-  { src: '/logos/css.svg', alt: 'css' },
-  { src: '/logos/Node.svg', alt: 'Node.js' },
-  { src: '/logos/Next.svg', alt: 'Next.js' },
   { src: '/logos/Git.svg', alt: 'Git' },
-  { src: '/logos/JS.svg', alt: 'JavaScript' },
   { src: '/logos/Jenkins.svg', alt: 'Jenkins' },
+  { src: '/logos/Docker.svg', alt: 'Docker' },
   { src: '/logos/Jira.svg', alt: 'Jira' },
-  { src: '/logos/Matlab.svg', alt: 'MATLAB' },
-  { src: '/logos/C++.svg', alt: 'C++' },
 ];
-
 interface Props {
   items?: Tech[];
   speedSec?: number;
@@ -37,11 +47,10 @@ const StackBar = ({
   speedSec = 120,
   grayscale = true,
 }) => {
+  const tape = [...items, ...items, ...items, ...items];
 
-const tape = [...items, ...items, ...items, ...items];
-
-const itemWidth = 220; // min-w-[180px] + gap
-const moveDistance = items.length * itemWidth;
+  const itemWidth = 220; // min-w-[180px] + gap
+  const moveDistance = items.length * itemWidth;
 
   return (
     <section aria-label='Languages, Frameworks, and Tools' className='w-full'>
@@ -84,7 +93,7 @@ const moveDistance = items.length * itemWidth;
                   alt={t.alt}
                   width={80}
                   height={80}
-                  className={`object-contain ${grayscale ? 'grayscale' : ''}`}
+                  className={`object-contain self-center ${grayscale ? 'grayscale' : ''}`}
                 />
                 <span className='font-gestura text-[0.60rem] tracking-[0.18em] uppercase text-black/70'>
                   {t.label ?? t.alt}

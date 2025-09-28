@@ -115,7 +115,6 @@ const ExperienceSection = () => {
       },
     },
   ];
-  
 
   return (
     <section

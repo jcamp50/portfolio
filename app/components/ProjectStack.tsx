@@ -1,6 +1,7 @@
 'use client';
 import React, { useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 type Props = {
   images: string[];
@@ -14,6 +15,9 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
   const startX = useRef<number | null>(null);
   const [animating, setAnimating] = useState(false);
   const [suppressTransition, setSuppressTransition] = useState(false);
+  const [dragging, setDragging] = useState(false);
+
+  const intensity = Math.min(1, Math.abs(dragX) / 140);
 
   const order = useMemo(() => {
     // stack order: top card first, then next, etc.
@@ -54,6 +58,7 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
     if (animating || isFromButton(e.target)) return; // NEW: ignore while animating
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
     startX.current = e.clientX;
+    setDragging(true);
   };
 
   const onPointerMove: React.PointerEventHandler<HTMLDivElement> = (e) => {
@@ -69,6 +74,7 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
     }
     setDragX(0);
     startX.current = null;
+    setDragging(false);
   };
 
   return (
@@ -99,7 +105,7 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
           return (
             <figure
               key={`${imgIndex}-${depth}`}
-              className='absolute inset-0 mx-auto cursor-pointer top-[7%]'
+              className={`absolute inset-0 mx-auto top-[7%]`}
               style={{
                 zIndex: z,
                 transform: `translateY(${translateY}px) scale(${scale}) rotate(${
@@ -109,17 +115,46 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
                   startX.current || suppressTransition
                     ? 'none'
                     : 'transform 260ms ease',
+                filter: isTop
+                  ? `drop-shadow(0 12px ${36 + 18 * intensity}px rgba(0,0,0,${
+                      0.38 + 0.18 * intensity
+                    }))`
+                  : undefined,
               }}
             >
-              <Image
-                src={images[imgIndex]}
-                alt={`Project screen ${imgIndex + 1}`}
-                width={740} // or 500 if you want tighter
-                height={444} // keep ~5:3 ratio
-                draggable={false}
-                className='mx-auto object-contain rounded-md shadow-[0_12px_36px_rgba(0,0,0,.38)] select-none'
-                priority={imgIndex === idx}
-              />
+              {/* ✅ Hover polish on a CHILD so it composes with parent transform */}
+              {isTop ? (
+                <motion.div
+                  className={`${
+                    dragging ? 'cursor-grabbing' : 'cursor-pointer'
+                  } pointer-events-auto will-change-transform`}
+                  whileHover={{ scale: 1.01, y: -2 }}
+                  whileTap={{ scale: 0.995 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                >
+                  <Image
+                    src={images[imgIndex]}
+                    alt={`Project screen ${imgIndex + 1}`}
+                    width={740}
+                    height={444}
+                    draggable={false}
+                    className='mx-auto object-contain rounded-md shadow-[0_12px_36px_rgba(0,0,0,.38)] select-none'
+                    priority={imgIndex === idx}
+                  />
+                </motion.div>
+              ) : (
+                <div className='pointer-events-none'>
+                  <Image
+                    src={images[imgIndex]}
+                    alt={`Project screen ${imgIndex + 1}`}
+                    width={740}
+                    height={444}
+                    draggable={false}
+                    className='mx-auto object-contain rounded-md shadow-[0_12px_36px_rgba(0,0,0,.38)] select-none'
+                    priority={imgIndex === idx}
+                  />
+                </div>
+              )}
             </figure>
           );
         })}
