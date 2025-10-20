@@ -78,10 +78,10 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
   };
 
   return (
-    <div className='absolute inset-0 flex items-center justify-center'>
+    <div className='relative md:absolute md:inset-0 md:flex md:items-center md:justify-center'>
       {/* stack area */}
       <div
-        className='relative w-[86%] max-w-[1100px] aspect-[5/3] select-none'
+        className='relative w-full md:w-[86%] md:max-w-[1100px] aspect-[5/3] select-none'
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
@@ -124,13 +124,10 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
             >
               {/* ✅ Hover polish on a CHILD so it composes with parent transform */}
               {isTop ? (
-                <motion.div
+                <div
                   className={`${
                     dragging ? 'cursor-grabbing' : 'cursor-pointer'
-                  } pointer-events-auto will-change-transform`}
-                  whileHover={{ scale: 1.01, y: -2 }}
-                  whileTap={{ scale: 0.995 }}
-                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                  } pointer-events-auto will-change-transform touch-none`}
                 >
                   <Image
                     src={images[imgIndex]}
@@ -142,7 +139,7 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
                     priority={imgIndex === idx}
                     unoptimized
                   />
-                </motion.div>
+                </div>
               ) : (
                 <div className='pointer-events-none'>
                   <Image
@@ -169,7 +166,7 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
           className={`absolute z-50 left-0 top-1/2 -translate-y-1/2 ml-2 text-2xl px-3 py-2 rounded-full backdrop-blur-sm
     ${
       variant === 'dark'
-        ? 'text-white hover:text-white/40'
+        ? 'text-black md:text-white hover:text-black/40 md:hover:text-white/40'
         : 'text-black hover:text-black/20'
     }`}
         >
@@ -182,15 +179,15 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
           className={`absolute z-50 right-0 top-1/2 -translate-y-1/2 mr-2 text-2xl px-3 py-2 rounded-full backdrop-blur-sm
     ${
       variant === 'dark'
-        ? 'text-white hover:text-white/40'
+        ? 'text-black md:text-white hover:text-black/40 md:hover:text-white/40'
         : 'text-black hover:text-black/20'
     }`}
         >
           ›
         </button>
 
-        {/* indicators */}
-        <div className='absolute bottom-0 left-0 right-0 mx-auto flex items-center justify-center gap-4'>
+        {/* indicators - desktop */}
+        <div className='hidden md:flex absolute bottom-0 left-0 right-0 mx-auto items-center justify-center gap-4'>
           {/* dots */}
           <div className='flex items-center gap-2'>
             {images.map((_, i) => {
@@ -212,6 +209,25 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
               );
             })}
           </div>
+        </div>
+      </div>
+
+      {/* indicators - mobile: positioned below the image stack */}
+      <div className='md:hidden relative mt-16 flex items-center justify-center gap-4'>
+        {/* dots */}
+        <div className='flex items-center gap-2'>
+          {images.map((_, i) => {
+            const active = i === idx;
+            return (
+              <span
+                key={i}
+                aria-hidden
+                className={`h-2 w-2 rounded-full ${
+                  active ? 'bg-black' : 'bg-black/20'
+                }`}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

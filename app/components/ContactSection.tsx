@@ -59,7 +59,7 @@ export default function ContactSection() {
         >
           <h1
             id='title'
-            className='text-white text-7xl px-4 pb-2 font-futura leading-none'
+            className='text-white text-4xl md:text-7xl px-4 pb-2 font-futura leading-none'
             style={{ transformOrigin: '50% 50%' }}
           >
             Contact

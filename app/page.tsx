@@ -18,7 +18,7 @@ export default function Home() {
         <HeroSection />
         <ExperienceSection />
         {/* Projects: flat-white island + seamless fades, no extra space */}
-        <section className='relative -mx-12'>
+        <section className='relative -mx-5 sm:-mx-6 md:-mx-12 overflow-x-clip'>
           {/* 1) Flat white underlay just for the project block */}
           <div className='absolute inset-0 bg-white z-0' aria-hidden />
 
@@ -30,7 +30,7 @@ export default function Home() {
           />
 
           {/* 3) The actual project content sits above the white underlay */}
-          <div className='relative z-20 px-12'>
+          <div className='relative z-20 px-5 sm:px-6 md:px-12'>
             <ProjectSection />
           </div>
 
