@@ -245,7 +245,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
           aria-hidden
         >
           {/* FRONT STRAP */}
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 ml-[-28px] sm:-translate-x-[40px]  w-12 sm:w-14 h-[340px] sm:h-[400px] overflow-hidden origin-top z-10 -rotate-[6deg] shadow-md'>
+          <div className='absolute top-0 left-1/2 ml-[-28px] -translate-x-[32px] sm:-translate-x-[40px] w-14 h-[340px] sm:h-[400px] overflow-hidden origin-top z-10 -rotate-[6deg] shadow-md'>
             <div className='absolute inset-0 bg-[#E21B1B]' />
             <div className='absolute inset-0 flex items-center justify-center'>
               <div className='relative rotate-90 whitespace-nowrap'>
@@ -260,7 +260,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
             </div>
           </div>
           {/* BACK STRAP */}
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 ml-[-28px] sm:translate-x-[40px] w-12 sm:w-14 h-[340px] sm:h-[400px] overflow-hidden origin-top z-0 rotate-[6deg] shadow'>
+          <div className='absolute top-0 left-1/2 ml-[-28px] translate-x-[36px] sm:translate-x-[40px] w-14 h-[340px] sm:h-[400px] overflow-hidden origin-top z-0 rotate-[6deg] shadow'>
             <div className='absolute inset-0 bg-[#C91515]' />
             <div className='absolute inset-0 flex items-center justify-center opacity-85'>
               <div className='relative rotate-90 whitespace-nowrap'>
@@ -359,7 +359,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
                         rotateZ: useTransform(lanyardSway, (v) => v * 0.3),
                       }}
                     />
-                    <div className='relative h-[400px] w-[280px] sm:h-[460px] sm:w-[320px] [transform-style:preserve-3d]'>
+                    <div className='relative h-[440px] w-[280px] sm:h-[460px] sm:w-[320px] [transform-style:preserve-3d]'>
                       {/* tiny slot/punch at the top of badge for realism */}
                       <div className='pointer-events-none absolute left-1/2 -translate-x-1/2 -top-1 h-3 w-16 rounded-b-[8px] bg-neutral-200 shadow-sm z-10' />
 
@@ -438,7 +438,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
                               </div>
 
                               {/* Links — pill tags */}
-                              <ul className='w-full grid grid-cols-2 mt-4 gap-2'>
+                              <ul className='w-full grid grid-cols-2 mt-2 sm:mt-4 gap-2'>
                                 {LINKS.map((link) => (
                                   <li key={link.label}>
                                     <a
@@ -468,7 +468,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
                               </ul>
 
                               {/* Bottom zone: hologram + flip link + issue date */}
-                              <div className='mt-4 w-full grid grid-cols-3 items-end text-center'>
+                              <div className='mt-2 sm:mt-4 w-full grid grid-cols-3 items-end text-center'>
                                 {/* Left: hologram */}
                                 <motion.div
                                   aria-hidden

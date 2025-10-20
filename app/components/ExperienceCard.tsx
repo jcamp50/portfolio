@@ -50,13 +50,13 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   details,
   variant = 'experience',
 }) => {
-  const halfWrapBase = 'relative w-1/2 flex'; // confines card to half the container (prevents hitting the center line)
-  const centerWrap = 'relative w-full flex justify-center px-20';
+  const halfWrapBase = 'relative w-full md:w-1/2 flex min-w-0'; // confines card to half the container (prevents hitting the center line)
+  const centerWrap = 'relative w-full flex justify-center px-4 md:px-20';
 
   const halfWrapAlign =
     align === 'left'
-      ? 'justify-end pr-20' // push card toward center, add gutter from line
-      : 'ml-auto justify-start pl-20'; // move wrapper to right half, add gutter
+      ? 'justify-end md:pr-20 px-4 md:px-5'
+      : 'md:ml-auto justify-start md:pl-20 px-4 md:px-5';
 
   const p = Math.max(0, Math.min(1, progress)); // clamp progress between 0 and 1
 
@@ -67,16 +67,16 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   const isEdu = variant === 'education';
 
   // card sizing / typography tweaks
-  const logoSize = isEdu ? 100 : 150;
+  const logoSize = isEdu ? 70 : 150; // Smaller logo for education on mobile
   const titleClass = isEdu
-    ? 'font-gestura text-4xl tracking-tight uppercase'
-    : 'font-gestura text-3xl tracking-tight uppercase';
+    ? 'font-gestura text-2xl md:text-4xl tracking-tight uppercase'
+    : 'font-gestura text-xl md:text-3xl tracking-tight uppercase';
   const subTitleClass = isEdu
-    ? 'font-gestura text-2xl'
-    : 'font-gestura font-light text-gray-500 text-xl';
+    ? 'font-gestura text-lg md:text-2xl'
+    : 'font-gestura font-light text-gray-500 text-base md:text-xl';
   const dateClass = isEdu
-    ? 'font-gestura text-xl font-light text-gray-500 mt-auto'
-    : 'font-gestura text-xl font-light text-gray-500 mt-auto';
+    ? 'font-gestura text-base md:text-xl font-light text-gray-500 mt-auto'
+    : 'font-gestura text-base md:text-xl font-light text-gray-500 mt-auto';
 
   // background
   const cardBg = isEdu
@@ -102,13 +102,13 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           <span
             aria-hidden='true'
             className='pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
-            z-[18] w-[8px] h-[20px] bg-white'
+            z-[18] w-[8px] h-[20px] bg-white hidden md:block'
           />
 
           <span
             aria-hidden='true'
             className='pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
-            z-[19] w-[4px] h-[8px]'
+            z-[19] w-[4px] h-[8px] hidden md:block'
             style={{
               backgroundImage:
                 'linear-gradient(to bottom, #F61111 0%, #F61111 85%, white 100%)',
@@ -120,7 +120,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           <span
             aria-hidden='true'
             className='pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
-            z-[20] w-4 h-4 shadow-[0_0_0_2px_#fff]'
+            z-[20] w-4 h-4 shadow-[0_0_0_2px_#fff] hidden md:block'
             style={{
               backgroundImage:
                 'linear-gradient(to bottom, #F61111 0%, #F61111 85%, white 100%)',
@@ -144,7 +144,9 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
               transition-all duration-300 ${
                 open ? 'shadow-lg' : 'shadow-md'
               } flex flex-col ${
-            isEdu ? 'w-full max-w-[900px] px-12 py-6' : ' p-6 min-w-full'
+            isEdu
+              ? 'w-full max-w-[900px] px-6 py-4 md:px-12 md:py-6'
+              : ' p-4 md:p-6 min-w-full'
           } `}
         >
           {/* GOLDEN 45° SHIMMER ACROSS WHOLE EDUCATION CARD */}
@@ -216,7 +218,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           {/* ===== HEADER ROW ===== */}
           <div
             className={`relative z-20 flex items-start gap-4 ${
-              isEdu ? 'pl-[120px]' : ''
+              isEdu ? 'pl-[60px] md:pl-[120px]' : ''
             }`}
           >
             {/* Logo */}
@@ -227,7 +229,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                 alt={`${school} logo`}
                 width={logoSize}
                 height={logoSize}
-                className='absolute top-0 left-0 object-contain -translate-y-6'
+                className='absolute top-0 left-0 object-contain -translate-y-6 w-[70px] h-[70px] md:w-[100px] md:h-[100px]'
                 priority={false}
                 unoptimized
               />
@@ -316,7 +318,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
               ) : (
                 // EXPERIENCE details: existing block
                 <>
-                  <div className='max-w-[60%]'>
+                  <div className='max-w-full md:max-w-[60%]'>
                     {details?.summary && (
                       <p className='mb-8'>{details.summary}</p>
                     )}

@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <div
       id='home'
-      className='scroll-mt-24 flex flex-col mt-24 gap-12 md:gap-16 lg:gap-20'
+      className='scroll-mt-24 flex flex-col mt-16 md:mt-24 gap-8 md:gap-16 lg:gap-20 min-h-screen md:min-h-0'
     >
       <div className='flex flex-col md:flex-row items-center md:items-start'>
         {/* Left: Gradient Text */}
@@ -23,8 +23,8 @@ const HeroSection = () => {
               I&rsquo;m Jordan.
             </h1>
 
-            <div className='mt-8 md:mt-20 text-center'>
-              <p className='mt-8 sm:mt-4 text-[0.70rem] tracking-[0.24em] font-gestura uppercase font-light microcopy-reveal text-black/80'>
+            <div className='mt-8 mb-44 sm:mb-0 md:mt-20 text-center'>
+              <p className='mt-20 sm:mt-4 text-[0.70rem] tracking-[0.24em] font-gestura uppercase font-light microcopy-reveal text-black/80'>
                 Scroll
               </p>
               <Image

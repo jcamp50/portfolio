@@ -70,21 +70,37 @@ const StackBar = ({
 }) => {
   const tape = [...items, ...items, ...items, ...items];
 
-  const itemWidth = 220; // min-w-[180px] + gap
+  // Calculate item width based on mobile vs desktop sizing
+  const mobileItemWidth = 60; // min-w-[60px] + gap-3 + padding
+  const desktopItemWidth = 220; // min-w-[180px] + gap-10 + padding
+  const itemWidth = desktopItemWidth; // Use desktop width for animation calculation
   const moveDistance = items.length * itemWidth;
 
   return (
     <section aria-label='Languages, Frameworks, and Tools' className='w-full'>
+      {/* Mobile: Horizontal labels on top */}
+      <div className='flex justify-between items-center py-3 px-4 border-y border-black/20 md:hidden'>
+        <p className='font-gestura leading-none tracking-tight uppercase text-sm'>
+          Languages
+        </p>
+        <p className='font-gestura leading-none tracking-tight uppercase text-sm'>
+          Frameworks
+        </p>
+        <p className='font-gestura leading-none tracking-tight uppercase text-sm'>
+          Tools
+        </p>
+      </div>
+
       <div className='flex items-stretch gap-8'>
-        {/* Left label column */}
-        <div className='shrink-0 flex flex-col justify-evenly py-3 pr-4 border-y border-black/20'>
-          <p className='font-gestura leading-none tracking-tight uppercase text-2xl'>
+        {/* Desktop: Left label column */}
+        <div className='shrink-0 flex-col justify-evenly py-3 pr-4 border-y border-black/20 hidden md:flex'>
+          <p className='font-gestura leading-none tracking-tight uppercase text-sm md:text-2xl'>
             Languages
           </p>
-          <p className='font-gestura leading-none tracking-tight uppercase text-2xl'>
+          <p className='font-gestura leading-none tracking-tight uppercase text-sm md:text-2xl'>
             Frameworks
           </p>
-          <p className='font-gestura leading-none tracking-tight uppercase text-2xl'>
+          <p className='font-gestura leading-none tracking-tight uppercase text-sm md:text-2xl'>
             Tools
           </p>
         </div>
@@ -97,7 +113,7 @@ const StackBar = ({
 
           {/* moving track */}
           <div
-            className='tech-marquee flex gap-10 will-change-transform'
+            className='tech-marquee flex gap-3 md:gap-10 will-change-transform'
             style={{
               ['--speed' as any]: `${speedSec}s`,
               ['--move-distance' as any]: `-${moveDistance}px`,
@@ -107,19 +123,19 @@ const StackBar = ({
             {tape.map((t, i) => (
               <div
                 key={`${t.alt}-${i}`}
-                className='flex items-end gap-3 min-w-[180px] px-4 py-3 border-y border-black/20'
+                className='flex items-center md:items-end justify-center gap-2 md:gap-3 min-w-[60px] md:min-w-[180px] px-2 py-2 md:px-4 md:py-3 md:border-y border-black/20'
               >
                 <Image
                   src={t.src}
                   alt={t.alt}
-                  width={80}
-                  height={80}
-                  className={`object-contain self-center ${
+                  width={40}
+                  height={40}
+                  className={`object-contain self-center md:w-20 md:h-20 ${
                     grayscale ? 'grayscale' : ''
                   }`}
                   unoptimized
                 />
-                <span className='font-gestura text-[0.60rem] tracking-[0.18em] uppercase text-black/70'>
+                <span className='hidden md:inline font-gestura text-[0.60rem] tracking-[0.18em] uppercase text-black/70'>
                   {t.label ?? t.alt}
                 </span>
               </div>
@@ -127,6 +143,9 @@ const StackBar = ({
           </div>
         </div>
       </div>
+
+      {/* Mobile: Solid border underneath marquee items */}
+      <div className='h-px bg-black/20 md:hidden'></div>
     </section>
   );
 };

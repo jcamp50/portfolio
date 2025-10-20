@@ -128,7 +128,9 @@ const ExperienceSection = () => {
     >
       {/* Heading */}
       <div className='px-4 pb-2 bg-[#F61111] w-fit'>
-        <h1 className='text-white text-7xl font-futura'>Experience</h1>
+        <h1 className='text-white text-4xl md:text-7xl font-futura'>
+          Experience
+        </h1>
       </div>
 
       {/* Timeline container */}
@@ -143,7 +145,7 @@ const ExperienceSection = () => {
         />
 
         {/* Cards */}
-        <div className='relative z-20 flex flex-col gap-28'>
+        <div className='relative z-20 flex flex-col gap-16 md:gap-28'>
           {items.map((it, i) => {
             const fromX = it.align === 'left' ? -24 : 24;
 
