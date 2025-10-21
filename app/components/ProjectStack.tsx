@@ -138,6 +138,7 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
                     className='mx-auto object-contain rounded-md shadow-[0_12px_36px_rgba(0,0,0,.38)] select-none'
                     priority={imgIndex === idx}
                     unoptimized
+                    quality={95}
                   />
                 </div>
               ) : (
@@ -151,6 +152,7 @@ export default function ProjectStack({ images, variant = 'light' }: Props) {
                     className='mx-auto object-contain rounded-md shadow-[0_12px_36px_rgba(0,0,0,.38)] select-none'
                     priority={imgIndex === idx}
                     unoptimized
+                    quality={95}
                   />
                 </div>
               )}

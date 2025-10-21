@@ -418,7 +418,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
                             {/* Body */}
                             <div className='p-4 pt-3 flex flex-col items-center gap-3'>
                               {/* avatar with bezel ring */}
-                              <div className='relative h-32 w-32 overflow-hidden ring-1 ring-black/10 shadow-[inset_0_1px_6px_rgba(0,0,0,0.06)]'>
+                              <div className='relative h-32 w-32 overflow-hidden ring-1 ring-black/10'>
                                 <Image
                                   src={headshot}
                                   alt='Jordan Campbell headshot'
@@ -560,7 +560,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
                               />
                             </div>
 
-                            <h4 className='mt-4 text-sm text-center font-medium'>
+                            <h4 className='mt-4 text-xs sm:text-sm text-center font-medium leading-tight'>
                               Let&apos;s build something worth shipping.
                             </h4>
 
