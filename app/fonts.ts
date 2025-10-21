@@ -9,6 +9,7 @@ export const futuraHeavyOblique = localFont({
     },
   ],
   variable: "--font-futura-heavy-oblique",
+  display: "swap",
 });
 
 export const gestura = localFont({
