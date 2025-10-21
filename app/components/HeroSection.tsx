@@ -13,11 +13,11 @@ const HeroSection = () => {
     >
       <div className='flex flex-col md:flex-row items-center md:items-start'>
         {/* Left: Gradient Text */}
-        <div className='order-2 md:order-1 flex-1 pt-14 sm:pt-14 md:pt-32 lg:pt-48'>
+        <div className='order-2 md:order-1 flex-1 pt-14 sm:pt-14 md:pt-32'>
           <div className='inline-block text-center md:text-left'>
             <h1
-              className='font-gestura text-gradient-clip leading-tight
-                text-5xl sm:text-6xl md:text-6xl lg:text-9xl'
+              className='font-gestura text-gradient-clip leading-tight whitespace-nowrap
+                text-5xl sm:text-6xl md:text-5xl lg:text-6xl xl:text-9xl'
             >
               Hey there, <br />
               I&rsquo;m Jordan.
@@ -39,8 +39,8 @@ const HeroSection = () => {
         {/* Right: Red Background with Image */}
         <div className='order-1 md:order-2 flex-1 w-full flex justify-center md:justify-end'>
           <div
-            className='w-[85vw] sm:w-[90vw] md:w-[680px] md:h-[640px] lg:w-[800px] lg:h-[770px]
-                        aspect-[4/3] md:aspect-auto
+            className='w-[85vw] sm:w-[90vw] md:w-full md:max-w-[600px] md:aspect-square
+                        aspect-[4/3]
                         p-4 sm:p-6 md:p-8 lg:p-10 flex items-center justify-center'
             style={{
               background:
