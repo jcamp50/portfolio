@@ -130,7 +130,7 @@ const StackBar = ({
                   alt={t.alt}
                   width={40}
                   height={40}
-                  className={`object-contain self-center md:w-20 md:h-20 ${
+                  className={`object-contain self-center md:w-24 md:h-24 ${
                     grayscale ? 'grayscale' : ''
                   }`}
                   unoptimized

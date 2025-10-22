@@ -23,9 +23,9 @@ const ProjectSection = () => {
 
       <div className='flex flex-col w-full gap-16'>
         {/* One project */}
-        <article className='flex flex-col lg:flex-row gap-12 lg:items-center'>
+        <article className='flex flex-col lg:grid lg:grid-cols-3 gap-12'>
           {/* Image / gallery entry */}
-          <div className='min-w-0 lg:flex-[2]'>
+          <div className='lg:col-span-2'>
             <div className='relative md:aspect-[16/9] md:overflow-hidden'>
               {/* Background gradient placeholder - desktop only */}
               {/* Warm editorial gradient */}
@@ -43,14 +43,16 @@ const ProjectSection = () => {
           </div>
 
           {/* Text */}
-          <div className='lg:flex-[1] flex border-t border-b border-black/20 py-8 flex-col'>
-            <h2 className='font-gestura text-3xl md:text-5xl uppercase leading-tight'>
-              GoViral
-            </h2>
-            <p className='mt-1 text-xs font-gestura tracking-[0.18em] uppercase text-black/60'>
-              TypeScript, React, Node.js, Express, GPT-4o, ElevenLabs
-            </p>
-            <div className='mt-8 md:mt-60 font-gestura text-xl md:text-2xl leading-relaxed text-black/80 space-y-6'>
+          <div className='lg:col-span-1 flex border-t border-b border-black/20 py-8 flex-col justify-between'>
+            <div>
+              <h2 className='font-gestura text-3xl md:text-5xl uppercase leading-tight'>
+                GoViral
+              </h2>
+              <p className='mt-1 text-xs font-gestura tracking-[0.18em] uppercase text-black/60'>
+                TypeScript, React, Node.js, Express, GPT-4o, ElevenLabs
+              </p>
+            </div>
+            <div className='font-gestura mt-8 md:mt-0 text-xl md:text-2xl leading-relaxed text-black/80 space-y-6'>
               <p>
                 GoViral is a web app that helps creators easily repurpose and
                 manage viral short-form videos across platforms.
@@ -68,16 +70,18 @@ const ProjectSection = () => {
         </article>
 
         {/* Gapdle */}
-        <article className='flex flex-col lg:flex-row gap-12 lg:items-center'>
+        <article className='flex flex-col lg:grid lg:grid-cols-3 gap-12'>
           {/* Text */}
-          <div className='lg:flex-[1] border-t border-b border-black/20 py-8 flex flex-col order-2 lg:order-1'>
-            <h2 className='font-gestura text-3xl md:text-5xl uppercase leading-tight'>
-              Gapdle
-            </h2>
-            <p className='mt-1 text-xs font-gestura tracking-[0.18em] uppercase text-black/60'>
-              Angular, TypeScript, Spring Boot, PostgreSQL, AWS
-            </p>
-            <div className='mt-8 md:mt-60 font-gestura text-xl md:text-2xl leading-relaxed text-black/80 space-y-6'>
+          <div className='lg:col-span-1 flex border-t border-b border-black/20 py-8 flex-col order-2 lg:order-1 justify-between'>
+            <div>
+              <h2 className='font-gestura text-3xl md:text-5xl uppercase leading-tight'>
+                Gapdle
+              </h2>
+              <p className='mt-1 text-xs font-gestura tracking-[0.18em] uppercase text-black/60'>
+                Angular, TypeScript, Spring Boot, PostgreSQL, AWS
+              </p>
+            </div>
+            <div className='font-gestura mt-8 md:mt-0 text-xl md:text-2xl leading-relaxed text-black/80 space-y-6'>
               <p>
                 Gapdle is a daily head-to-head car race game. Guess the winner,
                 watch the clip, compare your pick to the crowd.
@@ -91,7 +95,7 @@ const ProjectSection = () => {
           </div>
 
           {/* Image / gallery entry */}
-          <div className='min-w-0 lg:flex-[2] order-1 lg:order-2'>
+          <div className='lg:col-span-2 order-1 lg:order-2'>
             <div className='relative md:aspect-[16/9] md:overflow-hidden'>
               {/* Gunmetal studio with subtle depth + red hint for brand continuity - desktop only */}
               <div className='hidden md:block absolute inset-0 bg-[linear-gradient(22deg,#f5f6f7,#e2e4e8_52%,#f5f6f7)]' />
@@ -110,9 +114,9 @@ const ProjectSection = () => {
         </article>
 
         {/* FPL Predictor */}
-        <article className='flex flex-col lg:flex-row gap-12 lg:items-center'>
+        <article className='flex flex-col lg:grid lg:grid-cols-3 gap-12'>
           {/* Image / gallery entry */}
-          <div className='min-w-0 lg:flex-[2] order-1 lg:order-1'>
+          <div className='lg:col-span-2 order-1 lg:order-1'>
             <div className='relative md:aspect-[16/9] md:overflow-hidden'>
               {/* Night match editorial background - desktop only */}
               <div className='hidden md:block absolute inset-0 bg-[linear-gradient(22deg,#0f1116,#1a1d24_55%,#0f1116)]' />
@@ -133,14 +137,16 @@ const ProjectSection = () => {
           </div>
 
           {/* Text */}
-          <div className='lg:flex-[1] border-t border-b border-black/20 py-8 flex flex-col order-2 lg:order-2'>
-            <h2 className='font-gestura text-3xl md:text-5xl uppercase leading-tight'>
-              FPL Predictor
-            </h2>
-            <p className='mt-1 text-xs font-gestura tracking-[0.18em] uppercase text-black/60'>
-              TypeScript, Python, FastAPI, Postgresql, Scraping, ML
-            </p>
-            <div className='mt-8 md:mt-60 font-gestura text-xl md:text-2xl leading-relaxed text-black/80 space-y-6'>
+          <div className='lg:col-span-1 flex border-t border-b border-black/20 py-8 flex-col order-2 lg:order-2 justify-between'>
+            <div>
+              <h2 className='font-gestura text-3xl md:text-5xl uppercase leading-tight'>
+                FPL Predictor
+              </h2>
+              <p className='mt-1 text-xs font-gestura tracking-[0.18em] uppercase text-black/60'>
+                TypeScript, Python, FastAPI, Postgresql, Scraping, ML
+              </p>
+            </div>
+            <div className='font-gestura mt-8 md:mt-0 text-xl md:text-2xl leading-relaxed text-black/80 space-y-6'>
               <p>
                 Fantasy Premier League Predictor blends form, fixtures, and
                 historical data trends to surface smart captaincy and lineup
