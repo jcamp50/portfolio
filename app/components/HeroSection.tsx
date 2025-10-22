@@ -39,7 +39,7 @@ const HeroSection = () => {
         {/* Right: Red Background with Image */}
         <div className='order-1 md:order-2 flex-1 w-full flex justify-center md:justify-end'>
           <div
-            className='w-[85vw] sm:w-[90vw] md:w-full md:max-w-[600px] md:aspect-square
+            className='w-[85vw] sm:w-[90vw] md:w-full md:max-w-[760px] md:aspect-square
                         aspect-[4/3]
                         p-4 sm:p-6 md:p-8 lg:p-10 flex items-center justify-center'
             style={{
