@@ -506,7 +506,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
                             {/* === Full-card cursor-tracked glare overlay === */}
                             <motion.div
                               aria-hidden
-                              className='pointer-events-none absolute inset-0 rounded-[1rem] mix-blend-overlay'
+                              className='hidden md:block pointer-events-none absolute inset-0 rounded-[1rem] mix-blend-overlay'
                               style={{
                                 background: useMotionTemplate`radial-gradient(80% 80% at ${glareX} ${glareY}, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.0) 55%)`,
                               }}
