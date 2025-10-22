@@ -9,11 +9,11 @@ const HeroSection = () => {
   return (
     <div
       id='home'
-      className='scroll-mt-24 flex flex-col mt-12 md:mt-24 gap-8 md:gap-16 lg:gap-20 min-h-screen md:min-h-0'
+      className='scroll-mt-24 flex flex-col mt-12 md:mt-24 gap-8 md:gap-16 lg:gap-24 min-h-screen md:min-h-0'
     >
-      <div className='flex flex-col md:flex-row items-center md:items-start'>
+      <div className='flex flex-col md:flex-row md:gap-8 items-center md:items-start'>
         {/* Left: Gradient Text */}
-        <div className='order-2 md:order-1 flex-1 pt-14 sm:pt-14 md:pt-32'>
+        <div className='order-2 md:order-1 flex-1 pt-14 sm:pt-14 md:pt-44'>
           <div className='inline-block text-center md:text-left'>
             <h1
               className='font-gestura text-gradient-clip leading-tight whitespace-nowrap
