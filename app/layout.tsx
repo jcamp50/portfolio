@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.jordancampbell.me'),
   title: 'Jordan Campbell - Software Engineer & Full-Stack Developer',
   description:
     'Software engineer with experience at Fidelity, Lockheed Martin, and Netflix. Specializing in TypeScript, React, Angular, Node.js, and full-stack development. View my portfolio, projects, and resume.',
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     siteName: 'Jordan Campbell Portfolio',
     images: [
       {
-        url: 'https://www.jordancampbell.me/opengraph-image',
+        url: 'https://www.jordancampbell.me/api/og',
         width: 1200,
         height: 630,
         alt: 'Jordan Campbell - Software Engineer',
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     title: 'Jordan Campbell - Software Engineer & Full-Stack Developer',
     description:
       'Software engineer with experience at Fidelity, Lockheed Martin, and Netflix. Specializing in TypeScript, React, Angular, Node.js, and full-stack development.',
-    images: ['https://www.jordancampbell.me/opengraph-image'],
+    images: ['https://www.jordancampbell.me/api/og'],
   },
   alternates: {
     canonical: 'https://www.jordancampbell.me',
