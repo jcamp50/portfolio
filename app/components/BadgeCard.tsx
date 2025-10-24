@@ -20,18 +20,38 @@ import type { MotionValue } from 'framer-motion';
 import headshot from '@/public/images/headshot.svg'; // temp image
 // import qr from '@/public/qr-contact.png' ;
 
-type LinkItem = { label: string; href: string; newTab?: boolean };
+type LinkItem = {
+  label: string;
+  href: string;
+  newTab?: boolean;
+  ariaLabel?: string;
+};
 type BadgeCardProps = { introPlay?: boolean };
 
 const LINKS: LinkItem[] = [
-  { label: 'GitHub', href: 'https://github.com/jcamp50', newTab: true },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/jcamp50',
+    newTab: true,
+    ariaLabel: "Visit Jordan Campbell's GitHub profile",
+  },
   {
     label: 'LinkedIn',
     href: 'https://linkedin.com/in/campbell-jordan',
     newTab: true,
+    ariaLabel: 'Connect with Jordan Campbell on LinkedIn',
   },
-  { label: 'Email', href: 'mailto:7jacampbell@gmail.com' },
-  { label: 'Resume', href: '/Jordan_Campbell_Resume.pdf', newTab: true },
+  {
+    label: 'Email',
+    href: 'mailto:7jacampbell@gmail.com',
+    ariaLabel: 'Email Jordan Campbell at 7jacampbell@gmail.com',
+  },
+  {
+    label: 'Resume',
+    href: '/Jordan_Campbell_Resume.pdf',
+    newTab: true,
+    ariaLabel: "Download Jordan Campbell's resume PDF",
+  },
 ];
 
 const MAX_DEG = 14; // how much card rotation we consider
@@ -451,6 +471,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
                                           ? 'noopener noreferrer'
                                           : undefined
                                       }
+                                      aria-label={link.ariaLabel || link.label}
                                       className='group inline-flex w-full items-center justify-between border border-black/10 bg-white/70 backdrop-blur-[2px] px-3 py-2 text-[13px] uppercase tracking-widest hover:bg-black/5 transition'
                                     >
                                       <span className='font-medium'>
@@ -582,6 +603,7 @@ export default function BadgeCard({ introPlay = false }: BadgeCardProps) {
                                   href='https://linkedin.com/in/campbell-jordan'
                                   target='_blank'
                                   rel='noopener noreferrer'
+                                  aria-label='Connect with Jordan Campbell on LinkedIn'
                                   className='border border-black/10 bg-white/70 backdrop-blur-[2px] px-3 py-2 text-sm text-center hover:bg-black/[0.04] transition'
                                 >
                                   Open LinkedIn

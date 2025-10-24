@@ -4,7 +4,6 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
-    
         protocol: 'https',
         hostname: 'ghchart.rshah.org',
         port: '',
@@ -12,7 +11,9 @@ const nextConfig = {
       },
     ],
   },
-}
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: false,
+};
 
-
-module.exports = nextConfig
+module.exports = nextConfig;

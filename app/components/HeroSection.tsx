@@ -29,7 +29,7 @@ const HeroSection = () => {
               </p>
               <Image
                 src={ArrowDown}
-                alt='Scroll down'
+                alt='Scroll down arrow icon'
                 className='inline-block arrow-reveal w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12'
                 unoptimized
               />
@@ -49,7 +49,7 @@ const HeroSection = () => {
           >
             <Image
               src={heroLaptop}
-              alt='Hero image'
+              alt='Jordan Campbell software engineer portfolio workspace featuring laptop with development environment and modern tech stack'
               priority
               quality={100}
               className='object-contain drop-shadow-md'
