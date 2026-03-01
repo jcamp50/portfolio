@@ -7,10 +7,33 @@ import FidelityLogo from '@/public/images/logos/Fidelity.svg';
 import LockheedLogo from '@/public/images/logos/Lockheed.svg';
 import NetflixLogo from '@/public/images/logos/Netflix.svg';
 import KairosLogo from '@/public/images/logos/Kairos.svg';
+import LuroLogo from '@/public/images/logos/Luro-logo.svg';
 import UCFLogo from '@/public/images/logos/UCF_tab.svg';
 //
 const ExperienceSection = () => {
   const items = [
+    {
+      logo: LuroLogo,
+      company: 'Luro.ai',
+      role: 'Cofounder',
+      dates: 'Oct 2025 – Present',
+      align: 'right' as const,
+      details: {
+        summary:
+          'Luro is AI for live creators: it watches streams in real time, understands context, and answers viewer questions so no one\'s left behind. Built for Twitch, Kick, YouTube and beyond.',
+        website: 'https://getluro.com',
+        bullets: [
+          'Defining product vision and technical architecture',
+          'Building real-time multi-modal AI pipeline (video, audio, chat)',
+          'Full-stack development and system design',
+          'RAG and long-context systems for livestream understanding',
+          'Shipping and iterating with early users',
+        ],
+        stack:
+          'Role: 25% product & architecture, 25% full-stack dev, 20% AI/ML & RAG, 15% marketing & growth, 10% infra & DevOps, 5% ops & hiring',
+        showBarcode: true,
+      },
+    },
     {
       logo: FidelityLogo,
       company: 'Fidelity Investments',

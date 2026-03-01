@@ -29,6 +29,7 @@ interface DetailsProps {
   summary?: string;
   bullets?: string[]; // e.g., ["Built X", "Improved Y"]
   location?: string; // "Durham, NC"
+  website?: string; // e.g., "https://getluro.com" — rendered as clickable link
   stack?: string; // "Angular, TypeScript, Nx, Jest, Jenkins, Jira"
   showBarcode?: boolean; // if you want to render a faux barcode
 }
@@ -352,6 +353,18 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                         priority={false}
                         unoptimized
                       />
+                    </div>
+                  )}
+                  {details?.website && (
+                    <div className='flex justify-center'>
+                      <a
+                        href={details.website.startsWith('http') ? details.website : `https://${details.website}`}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-[#F61111] underline hover:no-underline'
+                      >
+                        {details.website.replace(/^https?:\/\//, '')}
+                      </a>
                     </div>
                   )}
                 </>
